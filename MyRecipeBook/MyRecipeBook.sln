@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRecipeBook", "MyRecipeBook.csproj", "{464630B7-FA1C-46F8-8E19-CC2D6E85C4DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{24D1627B-807C-4466-A156-18F1CA5B718B} = {24D1627B-807C-4466-A156-18F1CA5B718B}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetWayServer", "..\GetWayServer\GetWayServer.csproj", "{24D1627B-807C-4466-A156-18F1CA5B718B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{464630B7-FA1C-46F8-8E19-CC2D6E85C4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464630B7-FA1C-46F8-8E19-CC2D6E85C4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464630B7-FA1C-46F8-8E19-CC2D6E85C4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464630B7-FA1C-46F8-8E19-CC2D6E85C4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D1627B-807C-4466-A156-18F1CA5B718B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D1627B-807C-4466-A156-18F1CA5B718B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D1627B-807C-4466-A156-18F1CA5B718B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D1627B-807C-4466-A156-18F1CA5B718B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21563423-69B2-427D-B2EA-B49712624422}
+	EndGlobalSection
+EndGlobal
