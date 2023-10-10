@@ -4,42 +4,77 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
+        xmlns:converter="clr-namespace:MyRecipeBook.Converter"
         mc:Ignorable="d"
         Title="my recipe book" Height="450" Width="800">
+    <Window.Resources>
+        <converter:ByteArrayToBitmapImageConverter x:Name="binaryConverter" x:Key="byteToImageConverter"/>
+        <converter:StringDocToFlowDocumentConverter x:Name="stringConverter" x:Key="strToFlowDocConverter"/>
+        <Style TargetType="ListViewItem">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="377*"/>
-            <ColumnDefinition Width="424*"/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="Food_Blog_Lbel"  FontWeight="Bold" Content="Food  Blog" HorizontalAlignment="Left" Margin="302,16,0,0" VerticalAlignment="Top" Width="141" FontSize="26" Grid.ColumnSpan="2"/>
-        <Button x:Name="My_Recipes" Content="" HorizontalAlignment="Left" Margin="322,-3,0,0" VerticalAlignment="Top" Height="96" Width="104" RenderTransformOrigin="-0.094,0.17" Click="My_Recipes_Click" BorderBrush="#FFF5F0F0" Grid.Column="1">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.922"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-            <Button.Background>
-                <ImageBrush ImageSource="/icons8-recipe-book-64.png" Stretch="None"/>
-            </Button.Background>
-        </Button>
-        <Label x:Name="My_recipes_lbel" Content="My Recipes" HorizontalAlignment="Left" Margin="322,79,0,0" VerticalAlignment="Top" Height="35" Width="105" FontSize="16" Grid.Column="1"/>
-        <Grid Margin="158,118,2,1" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="Serch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search: "  FontWeight="Bold" VerticalAlignment="Top" Height="30" Width="91" FontSize="16" Margin="12,76,0,0"/>
-        <Grid Margin="0,0,0,320" Grid.ColumnSpan="2">
-            <Border BorderBrush="Black" BorderThickness="1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="163*"/>
+        </Grid.RowDefinitions>
+        <Grid Height="110" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="197*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="210*"/>
+                <ColumnDefinition Width="174*"/>
+                <ColumnDefinition Width="119*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BorderBrush="Black" BorderThickness="2"/>
+            <TextBlock Grid.Column="0" x:Name="Serch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search: "  FontWeight="Bold" VerticalAlignment="Top" Height="30" Width="133" FontSize="16" Margin="8,62,0,0"/>
+            <TextBox Grid.Column="0" x:Name="tbFilter" Background="WhiteSmoke" MaxHeight="32" Text="" TextChanged="TextBox_TextChanged" Margin="66,42,12,1"/>
+            <Label  x:Name="My_recipes_lbel" Content="My Recipes" HorizontalAlignment="Left" Margin="15,75,0,0" VerticalAlignment="Top" Height="35" Width="104" FontSize="16" Grid.Column="4"/>
+            <Button x:Name="Recipe_for_beginer" Content="Recipes for beginer"  FontWeight="Bold"  HorizontalAlignment="Left" Margin="27,55,0,0" VerticalAlignment="Top" Width="172" Height="38" Background="#FFF9F6F6" BorderBrush="#FFFDF9F9" FontSize="16" Grid.Column="2" Click="Recipes_for_beginer_click"/>
+            <Button Content="Recomanded Recipes" FontWeight="Bold"  HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Height="45" Width="198" Background="#FFFBF8F8" BorderBrush="#FFFDFBFB" FontSize="16" Grid.Column="3" Grid.ColumnSpan="2" Click="Button_Click_1"/>
+            <Label x:Name="Food_Blog_Lbel"   FontWeight="Bold" Content="Food  Blog" HorizontalAlignment="Left" VerticalAlignment="Top" Width="233" FontSize="36" Grid.ColumnSpan="2" Height="70" Grid.Column="2" Margin="10,-2,0,0"/>
+            <Button x:Name="My_Recipes" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="90" RenderTransformOrigin="-0.094,0.17" Click="My_Recipes_Click" BorderBrush="#FFF5F0F0" Grid.Column="4" Margin="29,0,0,0">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.922"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="/icons8-recipe-book-64.png" Stretch="None"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Home" Grid.Column="1" Content="Home" FontWeight="bold" HorizontalAlignment="Left" Margin="5,61,0,0" VerticalAlignment="Top" Height="23" Width="86" Background="#FFF9F5F5" BorderBrush="#FFFFFCFC" FontSize="16"/>
         </Grid>
-        <TextBox HorizontalAlignment="Left" Margin="69,79,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="117" Height="26"/>
-        <Button Content="Recipes for beginer"  FontWeight="Bold"  HorizontalAlignment="Left" Margin="266,76,0,0" VerticalAlignment="Top" Width="172" Height="26" Background="#FFF9F6F6" BorderBrush="#FFFDF9F9" FontSize="16" Grid.ColumnSpan="2"/>
-        <Button Content="Recomanded Recipes" FontWeight="Bold"  HorizontalAlignment="Left" Margin="116,79,0,0" VerticalAlignment="Top" Height="23" Width="183" Background="#FFFBF8F8" BorderBrush="#FFFDFBFB" FontSize="16" Grid.Column="1"/>
-        <Grid Margin="2,117,222,1"/>
-        <Button HorizontalAlignment="Left" Margin="322,6,0,0" VerticalAlignment="Top" Height="83" Width="91" Grid.Column="1" BorderBrush="#FFF9F6F6" Foreground="#FFF3F1F1">
-            <Button.Background>
-                <ImageBrush ImageSource="/icons8-recipe-book-64.png" Stretch="None"/>
-            </Button.Background>
-        </Button>
+        <Grid Grid.Row="1"  Margin="0,3,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="177*"/>
+                <ColumnDefinition Width="623*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="0,-4,0,1">
+            </Border>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="104*" />
+                    <RowDefinition Height="219*"/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="0,-3,0,0">
 
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="-1,-1,400,218"/>
+                    
+            </Grid>
+
+
+
+         
+        </Grid>
     </Grid>
 </Window>

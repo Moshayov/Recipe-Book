@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
+using Windows.UI.Xaml.Controls;
 
 namespace MyRecipeBook
 {
@@ -25,19 +26,37 @@ namespace MyRecipeBook
     /// </summary>
     public partial class mainWindow2 : Window
     {
-        viewModel2 viewModel = null;
+        
 
         public mainWindow2()
         {
             InitializeComponent();
-
-            viewModel = new viewModel2();
+          
+            viewModel2 viewModel = new viewModel2();
 
             DataContext = viewModel;
         }
 
         private void My_Recipes_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+        // Filter searche in ListView on text changed in TextBox
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            listView.Items.Filter = new Predicate<object>(NameFilter);
+        }
+        // Filtering by recipes name 
+        private bool NameFilter(object obj)
+        {
+            Recipe2 recipe = obj as Recipe2;
+            bool name = recipe.Title.ToLower().Contains(tbFilter.Text.ToLower());
+            return name;
+        }
+
+        private void Recipes_for_beginer_click(object sender, RoutedEventArgs e)
+        {
+          
 
         }
     }

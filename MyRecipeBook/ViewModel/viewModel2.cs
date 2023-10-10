@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace MyRecipeBook.ViewModel
 {
-    internal class viewModel2 : INotifyPropertyChanged
+    internal class viewModel2 : ViewModelBase
     {
             public event PropertyChangedEventHandler PropertyChanged;
             private Recipe2 selectedRecipe = null;
@@ -19,7 +19,7 @@ namespace MyRecipeBook.ViewModel
             private ObservableCollection<Recipe2> recipes = null;
             private ObservableCollection<int> myRecipes = null;
             private int cbIndex = 0;
-      
+            
             public viewModel2()
             {
                 Recipes = get_recipes();
@@ -27,109 +27,55 @@ namespace MyRecipeBook.ViewModel
                 NewRecipe = new Recipe2();
                 myRecipes = new ObservableCollection<int>();
             }
-
-            void OnPropertyChanged([CallerMemberName] string name = null)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            }
-
-            // Prop for ComboBox SelectedIndex
-            public int CbIndex
-            {
-                get => cbIndex;
-                set
-                {
-                    if (cbIndex != value)
-                    {
-                        cbIndex = value;
-                        OnPropertyChanged();
-                    }
-                }
-            }
-
+            public void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             // Recipes Collection
             public ObservableCollection<Recipe2> Recipes
             {
                 get => recipes;
-                set
-                {
-                    if (recipes != value)
-                    {
-                        recipes = value;
-                        OnPropertyChanged();
-                    }
-                }
+                set => SetProperty(ref recipes, value);
             }
 
             //Recipes for my recipe book
             public ObservableCollection<int> MyRecipes
             {
                 get => myRecipes;
-                set
-                {
-                    if (myRecipes != value)
-                    {
-                        myRecipes = value;
-                        OnPropertyChanged();
-                    }
-                }
-            }
+                set => SetProperty(ref myRecipes, value);
+             }
 
             // Recipes Countries Collection
             public ObservableCollection<string> Countries
             {
                 get => countries;
-                set
-                {
-                    if (countries != value)
-                    {
-                        countries = value;
-                        OnPropertyChanged();
-                    }
-                }
-            }
+                set => SetProperty(ref countries, value);
+             }
 
             public Recipe2 SelectedRecipe
             {
                 get => selectedRecipe;
-                set
-                {
-                    if (selectedRecipe != value)
-                    {
-                        selectedRecipe = value;
-                        OnPropertyChanged();
-                    }
-                }
-            }
+                set => SetProperty(ref selectedRecipe, value);
+             }
 
             public Recipe2 NewRecipe
             {
                 get => newRecipe;
-                set
-                {
-                    if (newRecipe != value)
-                    {
-                        newRecipe = value;
-                        OnPropertyChanged();
-                    }
-                }
-            }
+                set => SetProperty(ref newRecipe, value);
+             }
 
             // Temporary recipe for AddEdit form
             public Recipe2 TempRecipe
             {
                 get => tempRecipe;
-                set
-                {
-                    if (tempRecipe != value)
-                    {
-                        tempRecipe = value;
-                        OnPropertyChanged();
-                    }
-                }
-            }
+                set => SetProperty(ref tempRecipe, value);
+             }
+        // Prop for ComboBox SelectedIndex
+        public int CbIndex
+        {
+            get => cbIndex;
+            set => SetProperty(ref cbIndex, value);
 
-            public ObservableCollection<Recipe2> get_recipes()
+        }
+
+        public ObservableCollection<Recipe2> get_recipes()
         {
             using (var dbContext = new GetWayServer.RecipeDbContext())//get the recipes from the server
             {
