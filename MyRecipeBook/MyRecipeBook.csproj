@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="18306654.jpg" />
+    <None Remove="34008983.png" />
+    <None Remove="40216996.jpg" />
+    <None Remove="46354889.jpg" />
     <None Remove="icons8-recipe-book-64.png" />
   </ItemGroup>
 
@@ -42,6 +46,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="18306654.jpg" />
+    <Resource Include="34008983.png" />
+    <Resource Include="40216996.jpg" />
+    <Resource Include="46354889.jpg" />
     <Resource Include="icons8-recipe-book-64.png" />
   </ItemGroup>
 
