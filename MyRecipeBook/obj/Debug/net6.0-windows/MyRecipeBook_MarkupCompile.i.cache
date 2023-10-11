@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\
+C:\Users\sara\Source\Repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\
 MyRecipeBook
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\App.xaml
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP;HAS_UNO;UNO_HAS_FRAMEWORKELEMENT_MEASUREOVERRIDE;UNO_HAS_NO_IDEPENDENCYOBJECT;UNO_REFERENCE_API
+C:\Users\sara\Source\Repos\Recipe-Book\MyRecipeBook\App.xaml
 61220328606
 
-24544651975
-369-1834454321
+25284811966
+3691796139101
 AboutUsWindow.xaml;AddEdit.xaml;MainWindow.xaml;mainWindow2.xaml;MyRecipesWindow.xaml;SubstitutesWindow.xaml;
 
-False
+True
 

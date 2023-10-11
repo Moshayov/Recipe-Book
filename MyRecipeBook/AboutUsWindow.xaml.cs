@@ -23,5 +23,10 @@ namespace MyRecipeBook
         {
             InitializeComponent();
         }
+
+        private void closing_button__Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

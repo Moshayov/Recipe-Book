@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "iDyU0agD6QdJDn/CtXdPIBqU/+q0Wr7ZVztLmQhXcwDut7jWjRxbfkK06A5f042La46fs4N/fW6dMpH/S9UB2Q==",
+  "dgSpecHash": "pzB/Ter6fFIh1rtSJuUmz/Z5afUcWfFvM9XATE78mgy+qXbu5iNgRZDAiXyNLd1ytizsRkbGKo2KhxJ0G26yEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sara\\source\\repos\\Recipe-Book\\DAL\\DAL.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\sara\\Source\\Repos\\Recipe-Book\\DAL\\DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sara\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\sara\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\sara\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\sara\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\sara\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
