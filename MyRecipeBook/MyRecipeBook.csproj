@@ -23,6 +23,7 @@
     <None Remove="recipe-book %283%29.png" />
     <None Remove="recipe-book.png" />
     <None Remove="תמונה1.png" />
+    <None Remove="תמונה6.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +62,7 @@
     <Resource Include="recipe-book (3).png" />
     <Resource Include="recipe-book.png" />
     <Resource Include="תמונה1.png" />
+    <Resource Include="תמונה6.png" />
   </ItemGroup>
 
 </Project>

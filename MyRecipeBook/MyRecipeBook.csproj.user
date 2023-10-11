@@ -13,6 +13,9 @@
     <Compile Update="AddEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="FoodSubstitutes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MyRecipesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +28,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FoodSubstitutes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
