@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
         mc:Ignorable="d"
-        Title="AboutUsWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="AboutUsWindow" Height="300" Width="500">
+    <Grid Background="#FFF4B0E5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="491*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="welcomLable" Grid.Column="1" Content="Welcome!" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Height="51" Width="136" FontSize="25" FontFamily="Segoe Print"/>
+        <Label Grid.Column="1" Content="If you are a vegetarian person, or you are new to the world of vegetarianism,you must&#xD;&#xA; have wondered why most cooking websites do not take part in this topic.&#xD;&#xA;And here we come into the picture .&#xD;&#xA;Hey!&#xD;&#xA;We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation&#xD;&#xA;of foods rich in vitamins,as varied as possible and of course delicious!&#xD;&#xA;Hope you enjoy the content,&#xD;&#xA;For comments or clarifications please send an email to:&#xD;&#xA;VagiCookBook.gmail.com&#xD;&#xA;" Margin="5,53,5,0" VerticalAlignment="Top" Height="172" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" FontStretch="Medium" FontWeight="SemiBold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.1"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button Grid.Column="1" Content="X" HorizontalAlignment="Left" Margin="457,10,0,0" VerticalAlignment="Top" Height="26" Width="24" Click="Button_Click" RenderTransformOrigin="2.422,0.178" FontStretch="SemiExpanded" FontWeight="Medium" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Image Grid.Column="1" Margin="342,179,28,13" Source="/תמונה1.png" RenderTransformOrigin="0.876,0.32">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.367"/>
+                    <RotateTransform Angle="12.815"/>
+                    <TranslateTransform Y="-0.573"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
     </Grid>
 </Window>

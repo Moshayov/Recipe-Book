@@ -19,14 +19,18 @@
     <None Remove="46354889.jpg" />
     <None Remove="brown.png" />
     <None Remove="icons8-recipe-book-64.png" />
+    <None Remove="istockphoto-1215141222-612x612.jpg" />
     <None Remove="noun-recipe-book-1689198.png" />
+    <None Remove="png-clipart-vegetable-food-heart-tomato-natural-foods-leaf-vegetable-thumbnail.png" />
     <None Remove="recipe-book %283%29.png" />
     <None Remove="recipe-book.png" />
+    <None Remove="תמונה1.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -56,9 +60,12 @@
     <Resource Include="46354889.jpg" />
     <Resource Include="brown.png" />
     <Resource Include="icons8-recipe-book-64.png" />
+    <Resource Include="istockphoto-1215141222-612x612.jpg" />
     <Resource Include="noun-recipe-book-1689198.png" />
+    <Resource Include="png-clipart-vegetable-food-heart-tomato-natural-foods-leaf-vegetable-thumbnail.png" />
     <Resource Include="recipe-book (3).png" />
     <Resource Include="recipe-book.png" />
+    <Resource Include="תמונה1.png" />
   </ItemGroup>
 
 </Project>
