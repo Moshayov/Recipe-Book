@@ -101,7 +101,8 @@ namespace MyRecipeBook.ViewModel
            // d.UpdteDb();
             using (var dbContext = new GetWayServer.RecipeDbContext())//get the recipes from the server
             {
-                
+                AddRecipe dd = new AddRecipe();
+                dd.UpdteDb();
                 ObservableCollection<Recipe2> recipes2 = new ObservableCollection<Recipe2>();
                 try
                 {
@@ -151,7 +152,7 @@ namespace MyRecipeBook.ViewModel
             // Logic for Recommended Recipes button
             // Handle Recommended Recipes command logic
             // Filter and display recommended recipes with an average rating greater than 4
-            var recommendedRecipes = Recipes.Where(recipe => recipe.Ratings.Average(rating => rating.Stars) >= 4).ToList();
+            var recommendedRecipes = Recipes.Where(recipe => recipe.Stars>=4).ToList();
 
             Recipes = new ObservableCollection<Recipe2>(recommendedRecipes);
         }
