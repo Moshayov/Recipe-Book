@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jbTVF+h6aZ2W4KCkqu/XcfjS0BZRWxCqSdUhxby/eZKyKIXXUFQuNG9lRAGENhaweR4Ws1VbGBobxZ6rEla5gg==",
+  "dgSpecHash": "fgg4+5H0LiB6vdq7V2dCkabhLaAQseI9Hr1EXlQSJCqr1VDSfMFcRaN36rQTjka5HnQiOKU9KMJDXR5pzyYAEA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sara\\source\\repos\\Recipe-Book\\PL\\DP.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\sara\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\sara\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
-    "C:\\Users\\sara\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\sara\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\sara\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
