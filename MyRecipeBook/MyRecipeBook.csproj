@@ -17,7 +17,11 @@
     <None Remove="34008983.png" />
     <None Remove="40216996.jpg" />
     <None Remove="46354889.jpg" />
+    <None Remove="brown.png" />
     <None Remove="icons8-recipe-book-64.png" />
+    <None Remove="noun-recipe-book-1689198.png" />
+    <None Remove="recipe-book %283%29.png" />
+    <None Remove="recipe-book.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,7 +54,11 @@
     <Resource Include="34008983.png" />
     <Resource Include="40216996.jpg" />
     <Resource Include="46354889.jpg" />
+    <Resource Include="brown.png" />
     <Resource Include="icons8-recipe-book-64.png" />
+    <Resource Include="noun-recipe-book-1689198.png" />
+    <Resource Include="recipe-book (3).png" />
+    <Resource Include="recipe-book.png" />
   </ItemGroup>
 
 </Project>

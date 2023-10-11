@@ -234,3 +234,9 @@ C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyR
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.csproj.CopyComplete
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.genruntimeconfig.cache
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\ref\MyRecipeBook.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\AboutUsWindow.g.cs
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipesWindow.g.cs
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\SubstitutesWindow.g.cs
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\AboutUsWindow.baml
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipesWindow.baml
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\SubstitutesWindow.baml

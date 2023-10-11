@@ -216,3 +216,8 @@ C:\Users\USER\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\refint\GetW
 C:\Users\USER\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\GetWayServer.pdb
 C:\Users\USER\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\GetWayServer.genruntimeconfig.cache
 C:\Users\USER\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\ref\GetWayServer.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\RestSharp.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
