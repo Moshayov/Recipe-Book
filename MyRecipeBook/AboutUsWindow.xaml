@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:MyRecipeBook"
         mc:Ignorable="d"
         Title="AboutUsWindow" Height="300" Width="500">
-    <Grid Background="#FFFFBBEB">
-        <Label Content="Welcome!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="66" Width="188" FontSize="38" FontFamily="Segoe Print" Foreground="#FF8B248C"/>
-        <Label Content="If you are a vegetarian person, or you are new to the world of vegetarianism, you&#xD;&#xA; must have wondered why most cooking websites do not take part in this topic.&#xD;&#xA; And here we come into the picture.&#xD;&#xA; Hey!&#xD;&#xA; We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation of&#xD;&#xA; foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy&#xD;&#xA; the content. &#xD;&#xA;For comments or clarifications please send an email to: &#xD;&#xA;VagiCookBook.gmail.com " HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="187" Width="469" FontWeight="Medium" Background="Transparent"/>
+    <Grid Background="#FFFFC0C0">
+        <Label Content="Welcome!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="66" Width="188" FontSize="38" FontFamily="Segoe Print" Foreground="#FFFFE6F6"/>
+        <Label Content="If you are a vegetarian person, or you are new to the world of vegetarianism, you&#xD;&#xA; must have wondered why most cooking websites do not take part in this topic.&#xD;&#xA; And here we come into the picture.&#xD;&#xA; Hey!&#xD;&#xA; We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation of&#xD;&#xA; foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy&#xD;&#xA; the content. &#xD;&#xA;For comments or clarifications please send an email to: &#xD;&#xA;VagiCookBook.gmail.com " HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="187" Width="469" FontWeight="Medium"  Foreground="#FFFFE6F6" Background="Transparent"/>
         <Image HorizontalAlignment="Left" Height="66" Margin="354,198,0,0" VerticalAlignment="Top" Width="83" Source="/תמונה1.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -19,7 +19,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="closing_button_" Content="X" HorizontalAlignment="Left" Margin="474,10,0,0" VerticalAlignment="Top" Height="17" Width="16" RenderTransformOrigin="0.717,0.973" Background="#FFFFBBEB" BorderBrush="#FFFFBBEB" FontWeight="Medium" FontSize="10" Foreground="#FF8B248C" Click="closing_button__Click"/>
+        <Button x:Name="closing_button_" Content="X" HorizontalAlignment="Left" Margin="474,10,0,0" VerticalAlignment="Top" Height="17" Width="16" RenderTransformOrigin="0.717,0.973" Background="#FFFFC0C0" BorderBrush="#FFFFC0C0" FontWeight="Medium" FontSize="10" Foreground="#FFEDE9ED" Click="closing_button__Click"/>
 
     </Grid>
 </Window>
