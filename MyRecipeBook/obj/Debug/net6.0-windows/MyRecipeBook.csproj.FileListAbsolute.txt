@@ -126,8 +126,6 @@ C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyR
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.dll
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\refint\MyRecipeBook.dll
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.pdb
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\GetWayServer\appsettings.Development.json
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\GetWayServer\appsettings.json
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\appsettings.Development.json
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\appsettings.json
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\GetWayServer.deps.json
@@ -227,7 +225,6 @@ C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\Add
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\mainWindow2.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.g.resources
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.d-bfalse.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.AssemblyInfoInputs.cache
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.AssemblyInfo.cs
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.csproj.CoreCompileInputs.cache
@@ -240,3 +237,4 @@ C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\Sub
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\AboutUsWindow.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipesWindow.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\SubstitutesWindow.baml
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.GeneratedMSBuildEditorConfig.editorconfig

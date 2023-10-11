@@ -39,8 +39,7 @@ namespace Recipes
         public byte[] ImageFile { get; set; }
         public string Country { get; set; }
         public byte[] DocumentData { get; set; }//בי
-        //list of usege date
-        public List<UsageDate> usageDates { get; set; }
+        public int Stars = 0;
 
         public recipe2() 
         {

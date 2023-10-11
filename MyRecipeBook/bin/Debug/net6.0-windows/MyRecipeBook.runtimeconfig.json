@@ -16,7 +16,6 @@
       }
     ],
     "configProperties": {
-      "Windows.ApplicationModel.DataTransfer.DragDrop.ExternalSupport": true,
       "System.Reflection.NullabilityInfoContext.IsSupported": true
     }
   }
