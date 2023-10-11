@@ -78,7 +78,7 @@ namespace MyRecipeBook {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MyRecipeBook;V1.0.0.0;component/addedit.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MyRecipeBook;component/addedit.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AddEdit.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
