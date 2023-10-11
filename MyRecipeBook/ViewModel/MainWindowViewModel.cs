@@ -13,6 +13,8 @@ namespace MyRecipeBook.ViewModel
     internal class MainWindowViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        private RecipeRepository _recipeRepository;
+
         private Recipe2 selectedRecipe = null;
         private Recipe2 newRecipe = null;
         private Recipe2 tempRecipe = null;
@@ -29,13 +31,13 @@ namespace MyRecipeBook.ViewModel
 
         public MainWindowViewModel()
         {
-            Recipes = get_recipes();
+            Recipes = new ObservableCollection<Recipe2>(_recipeRepository.GetRecipes());
             Countries = new ObservableCollection<string>();
             comments = new ObservableCollection<Comment>();
             ratings = new ObservableCollection<Rating>();
             usageDates = new ObservableCollection<UsageDate>();
             NewRecipe = new Recipe2();
-            myRecipes = new ObservableCollection<int> ();
+            myRecipes = new ObservableCollection<int>();
         }
 
         void OnPropertyChanged([CallerMemberName] string name = null)
@@ -124,7 +126,7 @@ namespace MyRecipeBook.ViewModel
                 }
             }
         }
-       
+
         // Recipes Countries Collection
         public ObservableCollection<string> Countries
         {
@@ -219,30 +221,8 @@ namespace MyRecipeBook.ViewModel
             }));
         }
 
-        public ObservableCollection<Recipe2> get_recipes()
-        {
-            using (var dbContext = new GetWayServer.RecipeDbContext())//get the recipes from the server
-            {
-                ObservableCollection<Recipe2> recipes2 = new ObservableCollection<Recipe2>();
-                try
-                {
-                    AddRecipe rec = new AddRecipe();
-                    // Query the data from the database
-                    List<recipe2> recipes = dbContext.Recipes.ToList();
-                    foreach (recipe2 r1 in recipes)
-                    {
-                        Recipe2 r2 = rec.convert_recipe2ToRecipe2(r1);
-                        recipes2.Add(r2);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Handle any exceptions here
-                    Console.WriteLine(ex.Message);
-                }
-                return recipes2;
-            }
-          
-        }
+
+
+    
     }
 }

@@ -165,18 +165,20 @@ namespace MyRecipeBook
                     int randomRating = rand.Next(1, 10); // Generates a random rating between 1 and 5
                     for (int i=0;i< randomRating; i++)
                     {
-                        int randomRating2 = rand.Next(1, 5);
+                        int randomRating2 = rand.Next(3, 5);
                         recipeToUpdate.Ratings.Add(new Rating { Stars = randomRating2 });
                     }
                     
                 
                     // Create a FlowDocument for the record
                     FlowDocument doc = InitializeDoc(recipeToUpdate);
+                    /*
                     using (var webClient = new WebClient())
                     {
                         recipeToUpdate.ImageFile= webClient.DownloadData(recipeToUpdate.Image);
                         //HttpResponseMessage response = await client.GetAsync(r.Image);
                     }
+                    */
                     // Serialize FlowDocument to binary data
                     using (MemoryStream stream = new MemoryStream())
                     {

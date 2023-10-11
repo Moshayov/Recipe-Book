@@ -1537,6 +1537,8 @@
           "EntityFramework": "6.4.4",
           "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "110.2.0",
           "SharpDX.Direct2D1": "4.2.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "Uno.UI": "4.10.26"

@@ -7,11 +7,23 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AboutUsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MyRecipesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SubstitutesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AboutUsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -19,6 +31,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="mainWindow2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MyRecipesWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SubstitutesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

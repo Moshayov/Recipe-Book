@@ -45,23 +45,23 @@
                     </Grid>
                 </Border>
                 <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                    <ComboBox x:Name="cbCountries" MaxHeight="32" Background="WhiteSmoke" SelectedIndex="{Binding CbIndex}" Margin="2" ItemsSource="{Binding Countries, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="cbCountries_SelectionChanged"/>
+                    <ComboBox x:Name="cbCountries" MaxHeight="32" Background="WhiteSmoke" SelectedIndex="{Binding Path=CbIndex}" Margin="2" ItemsSource="{Binding Path=Countries, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="cbCountries_SelectionChanged"/>
                 </Border>
                 <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
-                    <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding Recipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
+                    <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding Path=Recipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Image" Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Width="80" Height="80" Source="{Binding ImageFile, Converter={StaticResource byteToImageConverter}}"/>
+                                            <Image Width="80" Height="80" Source="{Binding Path=ImageFile, Converter={StaticResource byteToImageConverter}}"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
                                 <GridViewColumn Header="Title">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                                            <TextBlock Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
@@ -79,7 +79,7 @@
                         <GridSplitter Grid.Column="0"></GridSplitter>
                         <Button Grid.Column="0" MinHeight="32" Margin="2" Content="Add" Click="AddButton_Click"></Button>
                         <Button Grid.Column="1" MinHeight="32" Margin="2" Content="Edit" Click="EditButton_Click"></Button>
-                        <Button Grid.Column="2" MinHeight="32" Margin="2" Content="Delete" Command="{Binding DelCommand}"></Button>
+                        <Button Grid.Column="2" MinHeight="32" Margin="2" Content="Delete" Command="{Binding Path=DelCommand}"></Button>
                     </Grid>
                 </Border>
             </Grid>
