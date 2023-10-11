@@ -10,15 +10,3 @@ C:\Users\USER\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.dll
 C:\Users\USER\source\repos\Recipe-Book\PL\obj\Debug\net6.0\refint\DP.dll
 C:\Users\USER\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.pdb
 C:\Users\USER\source\repos\Recipe-Book\PL\obj\Debug\net6.0\ref\DP.dll
-C:\Users\sara\source\repos\Recipe-Book\PL\bin\Debug\net6.0\DP.deps.json
-C:\Users\sara\source\repos\Recipe-Book\PL\bin\Debug\net6.0\DP.dll
-C:\Users\sara\source\repos\Recipe-Book\PL\bin\Debug\net6.0\DP.pdb
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.csproj.AssemblyReference.cache
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.AssemblyInfoInputs.cache
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.AssemblyInfo.cs
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.csproj.CoreCompileInputs.cache
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.dll
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\refint\DP.dll
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\DP.pdb
-C:\Users\sara\source\repos\Recipe-Book\PL\obj\Debug\net6.0\ref\DP.dll

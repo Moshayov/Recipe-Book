@@ -159,16 +159,16 @@ namespace MyRecipeBook
 
                 foreach (recipe2 recipeToUpdate in recipesToUpdate)
                 {
-
+                    /*
                     // Generate and add random ratings to the recipe until the minimum count is reached
                     Random rand = new Random();
                     int randomRating = rand.Next(1, 10); // Generates a random rating between 1 and 5
                     for (int i=0;i< randomRating; i++)
                     {
                         int randomRating2 = rand.Next(3, 5);
-                        recipeToUpdate.Ratings.Add(new Rating { Stars = randomRating2 });
+                        recipeToUpdate.Ratings.Add(new Rating { Stars = randomRating2,RecipeId= recipeToUpdate.Id});
                     }
-                    
+                    */
                 
                     // Create a FlowDocument for the record
                     FlowDocument doc = InitializeDoc(recipeToUpdate);
@@ -216,6 +216,7 @@ namespace MyRecipeBook
             recipe1.Description = recipe.Description;
             recipe1.DocumentData = recipe.DocumentData;
             recipe1.UsageDates = new List<UsageDate>();
+            recipe1.Id = recipe.Id;
             foreach(UsageDate u in recipe.UsageDates)
             {
                 recipe1.UsageDates.Add(u);

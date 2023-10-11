@@ -16,8 +16,7 @@ namespace MyRecipeBook
         public mainWindow2()
         {
             InitializeComponent();
-            AddRecipe dd = new AddRecipe();
-            dd.UpdteDb();
+
             DataContext = viewModel;
         }
 
