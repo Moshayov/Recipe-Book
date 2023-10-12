@@ -27,7 +27,8 @@ namespace MyRecipeBook.Migrations
                     Doc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageFile = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DocumentData = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    DocumentData = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Stars = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,14 +78,14 @@ namespace MyRecipeBook.Migrations
                 name: "Rating",
                 columns: table => new
                 {
-                    RatingId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RatingId = table.Column<int>(type: "int", nullable: false),
+                        //.Annotation("SqlServer:Identity", "1, 1"),
                     Stars = table.Column<int>(type: "int", nullable: false),
                     RecipeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rating", x => x.RatingId);
+                    table.PrimaryKey("PK_Rating", x => new { x.RecipeId, x.RatingId });
                     table.ForeignKey(
                         name: "FK_Rating_Recipes_RecipeId",
                         column: x => x.RecipeId,

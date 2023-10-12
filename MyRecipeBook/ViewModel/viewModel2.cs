@@ -33,7 +33,9 @@ namespace MyRecipeBook.ViewModel
 
         public viewModel2()
         {
-            Recipes = get_recipes();
+            AddRecipe r = new AddRecipe();
+            r.UpdateDb();
+             Recipes = get_recipes();
             Countries = new ObservableCollection<string>();
             NewRecipe = new Recipe2();
             myRecipes = new ObservableCollection<int>();
@@ -94,7 +96,7 @@ namespace MyRecipeBook.ViewModel
             set => SetProperty(ref cbIndex, value);
 
         }
-
+      
         public ObservableCollection<Recipe2> get_recipes()
         {
             //AddRecipe d = new AddRecipe();
@@ -129,6 +131,10 @@ namespace MyRecipeBook.ViewModel
         {
             // Logic for Home button
             // Handle Home command logic
+
+            // Reset the recipes to display all recipes
+            Recipes = get_recipes();
+
             // Create and show the main window (if not already visible)
             if (Application.Current.MainWindow == null || !(Application.Current.MainWindow is mainWindow2))
             {
@@ -149,12 +155,13 @@ namespace MyRecipeBook.ViewModel
 
         private void ExecuteRecommendedRecipes(object parameter)
         {
-            // Logic for Recommended Recipes button
             // Handle Recommended Recipes command logic
             // Filter and display recommended recipes with an average rating greater than 4
-            var recommendedRecipes = Recipes.Where(recipe => recipe.Stars>=4).ToList();
-
-            Recipes = new ObservableCollection<Recipe2>(recommendedRecipes);
+            
+            var recommendedRecipes = recipes.Where(recipe => recipe.Ratings.Average(rating => rating.Stars) >= 4);
+            if (recommendedRecipes == null)
+                return;
+            Recipes = new ObservableCollection<Recipe2>(recommendedRecipes.ToList());
         }
 
         private void ExecuteSubstitutesForComponents(object parameter)
