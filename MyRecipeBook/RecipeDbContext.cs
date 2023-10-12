@@ -24,7 +24,7 @@ namespace GetWayServer
                 entity.HasMany(r => r.Comments)
                     .WithOne(c => c.Recipe)
                     .HasForeignKey(c => c.RecipeId);
-
+                /*
                 entity.HasMany(r => r.Ratings)
                     .WithOne(r => r.Recipe)
                     .HasForeignKey(r => r.RecipeId);
@@ -32,6 +32,17 @@ namespace GetWayServer
                 entity.HasMany(r => r.UsageDates)
                     .WithOne(u => u.Recipe)
                     .HasForeignKey(u => u.RecipeId);
+                */
+
+                // Configure the Method property as owned type (complex type)
+                entity.OwnsMany(r => r.Ratings, method =>
+                {
+                    method.Property<int>("RatingId"); // Foreign key to recipe2
+                    method.Property<int>("Stars"); // Step number within the recipe
+                    method.Property<int>("RecipeId").IsRequired(); // The actual instruction text
+                    // Define the composite key
+                    method.HasKey("RecipeId", "RatingId");
+                });
 
                 // Configure the Method property as owned type (complex type)
                 entity.OwnsMany(r => r.Instructions, method =>

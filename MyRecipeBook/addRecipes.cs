@@ -77,7 +77,7 @@ namespace MyRecipeBook
                 recipe.Ratings.Add(new Rating { Recipe = recipe, RatingId = count, Stars = randomRating2, RecipeId = recipe.Id });
                 count++;
             }
-            recipe.Stars = rand.Next(3, 5);
+            //recipe.Stars = rand.Next(3, 5);
 
             List<Dictionary<string, string>> methodList = recipeJson.method;
 
@@ -158,9 +158,9 @@ namespace MyRecipeBook
         {
             using (var dbContext = new RecipeDbContext()) // Create your DbContext instance
             {
-                //List<recipe2> recipesToUpdate = dbContext.Recipes.ToList();
-                int count = 6186;
-                foreach (recipe2 recipeToUpdate in dbContext.Recipes.ToList())
+                List<recipe2> recipesToUpdate = dbContext.Recipes.ToList();
+                int count = 1;
+                foreach (recipe2 recipeToUpdate in recipesToUpdate)
                 {
                     dbContext.Entry(recipeToUpdate).State = EntityState.Modified; // Set entity state to Modified
 
@@ -173,7 +173,7 @@ namespace MyRecipeBook
                         recipeToUpdate.Ratings.Add(new Rating { Recipe = recipeToUpdate, RatingId = count, Stars = randomRating2, RecipeId = recipeToUpdate.Id });
                         count++;
                     }
-                    recipeToUpdate.Stars = rand.Next(3, 5);
+                   // recipeToUpdate.Stars = rand.Next(3, 5);
 
                     // Create a FlowDocument for the record
                     FlowDocument doc = InitializeDoc(recipeToUpdate);
@@ -200,7 +200,9 @@ namespace MyRecipeBook
                         // or taking another suitable action based on your application's requirements.
                     }
                 }
+             
             }
+
         }
 
 
@@ -218,12 +220,13 @@ namespace MyRecipeBook
         public Recipe2 convert_recipe2ToRecipe2(recipe2 recipe)
         {
             Recipe2 recipe1 = new Recipe2();
+            recipe1.Is_Mine = recipe.Is_Mine;
             recipe1.Difficulty = recipe.Difficulty;
             recipe1.Description = recipe.Description;
             recipe1.DocumentData = recipe.DocumentData;
             recipe1.UsageDates = new List<UsageDate>();
             recipe1.Id = recipe.Id;
-            recipe1.Stars = recipe.Stars;
+            //recipe1.Stars = recipe.Stars;
             foreach(UsageDate u in recipe.UsageDates)
             {
                 recipe1.UsageDates.Add(u);
@@ -263,7 +266,7 @@ namespace MyRecipeBook
             double averageRating = r.Ratings.Count > 0 ? r.Ratings.Average(rating => rating.Stars) : 0;
 
             // Get the star rating as a Span with yellow stars
-            Span starRatingSpan = GetStarRatingString(r.Stars);
+            Span starRatingSpan = GetStarRatingString(averageRating);
             // Create a Paragraph to hold the star rating Span
             Paragraph starRatingParagraph = new Paragraph();
             starRatingParagraph.Inlines.Add(new Bold(new Run($"Rating:")));

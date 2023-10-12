@@ -28,7 +28,7 @@ namespace MyRecipeBook.Migrations
                     ImageFile = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DocumentData = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    Stars = table.Column<int>(type: "int", nullable: true)
+                   // Stars = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,8 +78,8 @@ namespace MyRecipeBook.Migrations
                 name: "Rating",
                 columns: table => new
                 {
-                    RatingId = table.Column<int>(type: "int", nullable: false),
-                        //.Annotation("SqlServer:Identity", "1, 1"),
+                    RatingId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Stars = table.Column<int>(type: "int", nullable: false),
                     RecipeId = table.Column<int>(type: "int", nullable: false)
                 },

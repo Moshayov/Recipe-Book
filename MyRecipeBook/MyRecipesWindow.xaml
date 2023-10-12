@@ -4,8 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
+        xmlns:converter="clr-namespace:MyRecipeBook.Converter"
         mc:Ignorable="d"
         Title="MyRecipesWindow" Height="900" Width="1600">
+    <Window.Resources>
+        <converter:ByteArrayToBitmapImageConverter x:Name="binaryConverter" x:Key="byteToImageConverter"/>
+        <converter:StringDocToFlowDocumentConverter x:Name="stringConverter" x:Key="strToFlowDocConverter"/>
+        <Style TargetType="ListViewItem">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid Height="147" VerticalAlignment="Top">
             <Border BorderBrush="Black" BorderThickness="1" Background="#FFFFC0C0">
@@ -28,6 +41,7 @@
         <Grid Margin="368,235,0,425">
             <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,956,0">
                 <Image x:Name="recipe_image"/>
+                
             </Border>
         </Grid>
         <TextBox x:Name="search_textBox" HorizontalAlignment="Left" Height="26" Margin="120,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" BorderBrush="#FFB69191" FontSize="17"/>
