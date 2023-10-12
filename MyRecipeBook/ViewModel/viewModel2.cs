@@ -101,8 +101,8 @@ namespace MyRecipeBook.ViewModel
            // d.UpdteDb();
             using (var dbContext = new GetWayServer.RecipeDbContext())//get the recipes from the server
             {
-                AddRecipe dd = new AddRecipe();
-                dd.UpdteDb();
+               // AddRecipe dd = new AddRecipe();
+                //dd.UpdteDb();
                 ObservableCollection<Recipe2> recipes2 = new ObservableCollection<Recipe2>();
                 try
                 {
