@@ -23,7 +23,7 @@ namespace MyRecipeBook.ViewModel
         public ICommand HomeCommand { get; }
         public ICommand RecipesForBeginnersCommand { get; }
         public ICommand RecommendedRecipesCommand { get; }
-        public ICommand SubstitutesForComponentsCommand { get; }
+        public ICommand SubstitutesCommand { get; }
         public ICommand AboutUsCommand { get; }
         public ICommand MyRecipesCommand { get; }
         public ICommand SearchCommand { get; }
@@ -41,7 +41,7 @@ namespace MyRecipeBook.ViewModel
             HomeCommand = new DelegateCommand(ExecuteHome);
             RecipesForBeginnersCommand = new DelegateCommand(ExecuteRecipesForBeginners);
             RecommendedRecipesCommand = new DelegateCommand(ExecuteRecommendedRecipes);
-            SubstitutesForComponentsCommand = new DelegateCommand(ExecuteSubstitutesForComponents);
+            SubstitutesCommand = new DelegateCommand(ExecuteSubstitutesForComponents);
             AboutUsCommand = new DelegateCommand(ExecuteAboutUs);
             MyRecipesCommand = new DelegateCommand(ExecuteMyRecipes);
             SearchCommand = new DelegateCommand(SearchCommandExecute);
@@ -101,8 +101,8 @@ namespace MyRecipeBook.ViewModel
            // d.UpdteDb();
             using (var dbContext = new GetWayServer.RecipeDbContext())//get the recipes from the server
             {
-                AddRecipe dd = new AddRecipe();
-                dd.UpdteDb();
+               // AddRecipe dd = new AddRecipe();
+                //dd.UpdteDb();
                 ObservableCollection<Recipe2> recipes2 = new ObservableCollection<Recipe2>();
                 try
                 {

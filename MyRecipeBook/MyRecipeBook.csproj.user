@@ -13,13 +13,10 @@
     <Compile Update="AddEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="FoodSubstitutes.xaml.cs">
+    <Compile Update="SubstitutesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MyRecipesWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="SubstitutesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,7 +27,7 @@
     <Page Update="AddEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="FoodSubstitutes.xaml">
+    <Page Update="SubstitutesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -40,9 +37,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MyRecipesWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="SubstitutesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

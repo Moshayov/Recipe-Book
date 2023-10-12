@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace MyRecipeBook
 {
     /// <summary>
-    /// Interaction logic for SubstitutesWindow.xaml
+    /// Interaction logic for FoodSubstitutes.xaml
     /// </summary>
     public partial class SubstitutesWindow : Window
     {
         public SubstitutesWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
