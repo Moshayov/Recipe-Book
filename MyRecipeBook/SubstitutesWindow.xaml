@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
         mc:Ignorable="d"
-        Title="SubstitutesWindow" Height="450" Width="800">
+        Title="FoodSubstitutes" Height="420" Width="330">
     <Grid>
-        
+        <Image HorizontalAlignment="Center" Height="407" VerticalAlignment="Center" Width="331" Source="/תמונה6.png"/>
+        <Button x:Name="closeButton" Content="X" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top" Click="Button_Click" Width="16" Foreground="#FFF8F4F4" Background="#FFF0C9C0" BorderBrush="#FFF1EDEC" FontWeight="Bold"/>
+
     </Grid>
 </Window>
