@@ -19,15 +19,23 @@
         </Grid>
         <Grid Margin="0,235,0,0">
             <Border BorderBrush="Black" BorderThickness="1" Margin="366,222,0,0">
-                <ScrollViewer/>
+                <ScrollViewer Margin="9,-9,-9,9"/>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,1234,0">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="1,4,1233,0" Height="649" VerticalAlignment="Top">
                 <Button x:Name="Edit_Button" Content="Edit recipe" Margin="0,583,0,2" FontSize="26" FontWeight="Medium"/>
             </Border>
         </Grid>
         <Grid Margin="368,235,0,425">
             <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,956,0">
-                <Image x:Name="recipe_image"/>
+                <Grid Margin="-372,4,276,-360">
+                    <ListView d:ItemsSource="{d:SampleData ItemCount=5}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </Border>
         </Grid>
         <TextBox x:Name="search_textBox" HorizontalAlignment="Left" Height="26" Margin="120,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" BorderBrush="#FFB69191" FontSize="17"/>
