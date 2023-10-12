@@ -1,4 +1,6 @@
-﻿using MyRecipeBook.Model;
+﻿using FluentAssertions.Execution;
+using GetWayServer;
+using MyRecipeBook.Model;
 using Recipes;
 using System;
 using System.Collections.Generic;
@@ -19,32 +21,39 @@ namespace MyRecipeBook.ViewModel
         private Recipe2 tempRecipe = null;
         private ObservableCollection<string> countries = null;
         private ObservableCollection<Recipe2> recipes = null;
-        private ObservableCollection<int> myRecipes = null;
+        private ObservableCollection<Recipe2> allRecipes = null;
         public ICommand HomeCommand { get; }
         public ICommand RecipesForBeginnersCommand { get; }
         public ICommand RecommendedRecipesCommand { get; }
         public ICommand SubstitutesCommand { get; }
         public ICommand AboutUsCommand { get; }
-        public ICommand MyRecipesCommand { get; }
         public ICommand SearchCommand { get; }
-       
+       // public ICommand addCommand { get; }
 
         private int cbIndex = 0;
 
         public viewModel2()
         {
-            Recipes = get_recipes();
+          //  AddRecipe r = new AddRecipe();
+          //  r.UpdateDb();
+             Recipes = get_recipes();
             Countries = new ObservableCollection<string>();
             NewRecipe = new Recipe2();
-            myRecipes = new ObservableCollection<int>();
+            AllRecipes = get_recipes();
             // Initialize your commands
+           // addCommand = new DelegateCommand(Executeadd);
             HomeCommand = new DelegateCommand(ExecuteHome);
             RecipesForBeginnersCommand = new DelegateCommand(ExecuteRecipesForBeginners);
             RecommendedRecipesCommand = new DelegateCommand(ExecuteRecommendedRecipes);
             SubstitutesCommand = new DelegateCommand(ExecuteSubstitutesForComponents);
             AboutUsCommand = new DelegateCommand(ExecuteAboutUs);
-            MyRecipesCommand = new DelegateCommand(ExecuteMyRecipes);
             SearchCommand = new DelegateCommand(SearchCommandExecute);
+        }
+
+        public ObservableCollection<Recipe2> AllRecipes
+        {
+            get => allRecipes;
+            set => SetProperty(ref allRecipes, value);
         }
 
         public void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -53,13 +62,6 @@ namespace MyRecipeBook.ViewModel
         {
             get => recipes;
             set => SetProperty(ref recipes, value);
-        }
-
-        //Recipes for my recipe book
-        public ObservableCollection<int> MyRecipes
-        {
-            get => myRecipes;
-            set => SetProperty(ref myRecipes, value);
         }
 
         // Recipes Countries Collection
@@ -94,41 +96,43 @@ namespace MyRecipeBook.ViewModel
             set => SetProperty(ref cbIndex, value);
 
         }
-
+      
         public ObservableCollection<Recipe2> get_recipes()
         {
-            //AddRecipe d = new AddRecipe();
-           // d.UpdteDb();
-            using (var dbContext = new GetWayServer.RecipeDbContext())//get the recipes from the server
+            AddRecipe d = new AddRecipe();
+             //d.UpdateDb();
+            using (var dbContext = new RecipeDbContext()) // Create your DbContext instance
             {
-               // AddRecipe dd = new AddRecipe();
-                //dd.UpdteDb();
+                List<recipe2> recipes = dbContext.Recipes.ToList();
                 ObservableCollection<Recipe2> recipes2 = new ObservableCollection<Recipe2>();
-                try
-                {
-                    AddRecipe rec = new AddRecipe();
                     // Query the data from the database
-                    List<recipe2> recipes = dbContext.Recipes.ToList();
+                    //List<recipe2> recipes = dbContext.Recipes.ToList();
                     foreach (recipe2 r1 in recipes)
                     {
-                        Recipe2 r2 = rec.convert_recipe2ToRecipe2(r1);
+                        Recipe2 r2 = d.convert_recipe2ToRecipe2(r1);
                         recipes2.Add(r2);
                     }
-                }
-                catch (Exception ex)
-                {
-                    // Handle any exceptions here
-                    Console.WriteLine(ex.Message);
-                }
+                
+           
                 return recipes2;
             }
 
         }
 
+
         private void ExecuteHome(object parameter)
         {
             // Logic for Home button
             // Handle Home command logic
+
+            // Reset the recipes to display all recipes
+            ObservableCollection<Recipe2> recipes = new ObservableCollection<Recipe2>();
+            foreach(var recipe2 in allRecipes)
+            {
+                recipes.Add(recipe2);
+            }
+            Recipes = recipes;
+
             // Create and show the main window (if not already visible)
             if (Application.Current.MainWindow == null || !(Application.Current.MainWindow is mainWindow2))
             {
@@ -149,12 +153,12 @@ namespace MyRecipeBook.ViewModel
 
         private void ExecuteRecommendedRecipes(object parameter)
         {
-            // Logic for Recommended Recipes button
             // Handle Recommended Recipes command logic
             // Filter and display recommended recipes with an average rating greater than 4
-            var recommendedRecipes = Recipes.Where(recipe => recipe.Stars>=4).ToList();
-
-            Recipes = new ObservableCollection<Recipe2>(recommendedRecipes);
+            var recommendedRecipes = Recipes.Where(recipe => recipe.Ratings.Average(rating => rating.Stars) >= 4);
+            if (recommendedRecipes == null)
+                return;
+            Recipes = new ObservableCollection<Recipe2>(recommendedRecipes.ToList());
         }
 
         private void ExecuteSubstitutesForComponents(object parameter)
@@ -174,16 +178,7 @@ namespace MyRecipeBook.ViewModel
             AboutUsWindow aboutUsWindow = new AboutUsWindow();
             aboutUsWindow.Show();
         }
-
-        private void ExecuteMyRecipes(object parameter)
-        {
-            // Logic for My Recipes button
-            // Handle My Recipes command logic
-            // Create and show a new window (MyRecipesWindow) to display your recipes
-            MyRecipesWindow myRecipesWindow = new MyRecipesWindow();
-            myRecipesWindow.Show();
-        }
-
+      
         private void SearchCommandExecute(object parameter)
         {
             // Handle Search command logic

@@ -69,12 +69,16 @@ namespace MyRecipeBook
             }
             // Generate and add random ratings to the recipe until the minimum count is reached
             Random rand = new Random();
+            int count = 0;
             int randomRating = rand.Next(1, 10); // Generates a random rating between 1 and 5
             for (int i = 0; i < randomRating; i++)
             {
-                int randomRating2 = rand.Next(1, 5);
-                recipe.Ratings.Add(new Rating { Stars = randomRating2 });
+                int randomRating2 = rand.Next(3, 5);
+                recipe.Ratings.Add(new Rating { Recipe = recipe, RatingId = count, Stars = randomRating2, RecipeId = recipe.Id });
+                count++;
             }
+            //recipe.Stars = rand.Next(3, 5);
+
             List<Dictionary<string, string>> methodList = recipeJson.method;
 
             recipe.Instructions = methodList
@@ -150,36 +154,30 @@ namespace MyRecipeBook
             return doc;
         }
 
-        public void UpdteDb()
+        public void UpdateDb()
         {
             using (var dbContext = new RecipeDbContext()) // Create your DbContext instance
             {
-                // Retrieve existing records to update
                 List<recipe2> recipesToUpdate = dbContext.Recipes.ToList();
-                //(recipe =>  recipe.DocumentData.Length == 0 || recipe.Doc == "" || recipe.Doc.Length == 0) 
-
+                int count = 1;
                 foreach (recipe2 recipeToUpdate in recipesToUpdate)
                 {
-                    
+                    dbContext.Entry(recipeToUpdate).State = EntityState.Modified; // Set entity state to Modified
+
                     // Generate and add random ratings to the recipe until the minimum count is reached
                     Random rand = new Random();
-                    int randomRating = rand.Next(1, 10); // Generates a random rating between 1 and 5
-                    for (int i=0;i< randomRating; i++)
+                    int randomRating = rand.Next(1, 3); // Generates a random rating between 1 and 5
+                    for (int i = 0; i < randomRating; i++)
                     {
                         int randomRating2 = rand.Next(3, 5);
-                        recipeToUpdate.Ratings.Add(new Rating { Stars = randomRating2,RecipeId= recipeToUpdate.Id});
+                        recipeToUpdate.Ratings.Add(new Rating { Recipe = recipeToUpdate, RatingId = count, Stars = randomRating2, RecipeId = recipeToUpdate.Id });
+                        count++;
                     }
-                    recipeToUpdate.Stars = rand.Next(3, 5);
+                   // recipeToUpdate.Stars = rand.Next(3, 5);
 
                     // Create a FlowDocument for the record
                     FlowDocument doc = InitializeDoc(recipeToUpdate);
-                    /*
-                    using (var webClient = new WebClient())
-                    {
-                        recipeToUpdate.ImageFile= webClient.DownloadData(recipeToUpdate.Image);
-                        //HttpResponseMessage response = await client.GetAsync(r.Image);
-                    }
-                    */
+
                     // Serialize FlowDocument to binary data
                     using (MemoryStream stream = new MemoryStream())
                     {
@@ -191,14 +189,22 @@ namespace MyRecipeBook
                         recipeToUpdate.DocumentData = documentData;
                         recipeToUpdate.Doc = XamlWriter.Save(doc);
                     }
-                    dbContext.Entry(recipeToUpdate).State = EntityState.Modified; // Set entity state to Modified
+                    try
+                    {
+                        dbContext.SaveChanges(); // Save changes to the database
+                    }
+                    catch (System.Data.Entity.Infrastructure.DbUpdateConcurrencyException ex)
+                    {
+                        // Handle the concurrency exception here, e.g., log it or decide on the appropriate action
+                        // You might want to consider refreshing the record from the database and reapplying the changes
+                        // or taking another suitable action based on your application's requirements.
+                    }
                 }
-                // Save changes to the database
-                dbContext.SaveChanges();
+             
             }
 
-          
         }
+
 
         public List<recipe2> GetRecipes()
         {
@@ -214,12 +220,13 @@ namespace MyRecipeBook
         public Recipe2 convert_recipe2ToRecipe2(recipe2 recipe)
         {
             Recipe2 recipe1 = new Recipe2();
+            recipe1.Is_Mine = recipe.Is_Mine;
             recipe1.Difficulty = recipe.Difficulty;
             recipe1.Description = recipe.Description;
             recipe1.DocumentData = recipe.DocumentData;
             recipe1.UsageDates = new List<UsageDate>();
             recipe1.Id = recipe.Id;
-            recipe1.Stars = recipe.Stars;
+            //recipe1.Stars = recipe.Stars;
             foreach(UsageDate u in recipe.UsageDates)
             {
                 recipe1.UsageDates.Add(u);
@@ -259,7 +266,7 @@ namespace MyRecipeBook
             double averageRating = r.Ratings.Count > 0 ? r.Ratings.Average(rating => rating.Stars) : 0;
 
             // Get the star rating as a Span with yellow stars
-            Span starRatingSpan = GetStarRatingString(r.Stars);
+            Span starRatingSpan = GetStarRatingString(averageRating);
             // Create a Paragraph to hold the star rating Span
             Paragraph starRatingParagraph = new Paragraph();
             starRatingParagraph.Inlines.Add(new Bold(new Run($"Rating:")));

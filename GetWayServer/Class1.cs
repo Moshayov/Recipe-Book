@@ -21,8 +21,9 @@ namespace Recipes
         public List<Dictionary<string, string>> method { get; set; }
         public string image { get; set; }
     }
-    public class recipe2 : INotifyPropertyChanged
+    public class recipe2
     {
+        public bool Is_Mine { get; set; }
         public int Id { get; set; }
         public string Title { get; set; }
         public string Ingredients { get; set; }
@@ -39,11 +40,11 @@ namespace Recipes
         public byte[] ImageFile { get; set; }
         public string Country { get; set; }
         public byte[] DocumentData { get; set; }//בי
-        public int Stars = 0;
+      
 
         public recipe2() 
         {
-           
+            Is_Mine = false;
             Title = string.Empty;
             Ingredients = string.Empty;
             Comments = new List<Comment>();
@@ -93,12 +94,6 @@ namespace Recipes
             public DateTime Date { get; set; }
             public int RecipeId { get; set; }
             public recipe2 Recipe { get; set; }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
     }
