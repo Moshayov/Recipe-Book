@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
         mc:Ignorable="d"
-        Title="MyRecipesWindow" Height="450" Width="800">
+        Title="MyRecipesWindow" Height="900" Width="1600">
     <Grid>
-        
+        <Grid Height="147" VerticalAlignment="Top">
+            <Border BorderBrush="Black" BorderThickness="1" Background="#FFFFC0C0">
+                <Label x:Name="MyRecipeBook_lable" Content="My recipe book" Margin="629,37,629,36" FontSize="45" FontWeight="Medium" FontFamily="Comic Sans MS"/>
+            </Border>
+        </Grid>
+        <Grid Margin="0,147,0,649">
+            <Border BorderBrush="Black" BorderThickness="1" Background="#FFFFE0E0">
+                <TextBlock TextWrapping="Wrap" Text="Search:" Margin="33,25,1482,24" FontWeight="Medium" FontSize="22"/>
+            </Border>
+        </Grid>
+        <Grid Margin="0,235,0,0">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="366,222,0,0">
+                <ScrollViewer/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,1234,0">
+                <Button x:Name="Edit_Button" Content="Edit recipe" Margin="0,583,0,2" FontSize="26" FontWeight="Medium"/>
+            </Border>
+        </Grid>
+        <Grid Margin="368,235,0,425">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,956,0">
+                <Image x:Name="recipe_image"/>
+            </Border>
+        </Grid>
+        <TextBox x:Name="search_textBox" HorizontalAlignment="Left" Height="26" Margin="120,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" BorderBrush="#FFB69191" FontSize="17"/>
+
     </Grid>
 </Window>

@@ -78,12 +78,12 @@
                 </Grid.RowDefinitions>
                 <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="0,-3,0,0">
                     <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding Recipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
-                   <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </Border>
                 <Button x:Name="add_to_my_recipes" Content="Add To My Recipe Book"  Grid.Column="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="72" Width="354" Click="add_to_my_recipes_Click"/>
             </Grid>
@@ -101,7 +101,7 @@
                         <Image x:Name="recipeImg" Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageFile, Converter={StaticResource byteToImageConverter}}"/>
                     </Border>
                     <Border BorderBrush="Black" BorderThickness="1"  Margin="0,-3,0,0" Grid.Column="1"/>
-                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Text="{Binding Title}"></TextBlock>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Text="{Binding Title}"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Border BorderBrush="Black" BorderThickness="1"/>
