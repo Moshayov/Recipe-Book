@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="136*"/>
             </Grid.ColumnDefinitions>
             <Label x:Name="Food_Blog_Lbel" FontWeight="Bold" Content="Food  Blog" HorizontalAlignment="Left" VerticalAlignment="Center" Width="233" FontSize="36" Height="70" Grid.Column="1" Margin="76,-6,0,0"/>
-            <Button x:Name="My_Recipes" Click="ExecuteMyRecipes" Content=""  HorizontalAlignment="Left" Width="234" RenderTransformOrigin="-0.094,0.17"  BorderBrush="#FFF5F0F0" Margin="62,-66,0,-39" Grid.Column="2" Command="{Binding MyRecipesCommand}">
+            <Button x:Name="My_Recipes" Click="ExecuteMyRecipes" Content=""  HorizontalAlignment="Left" Width="234" RenderTransformOrigin="-0.094,0.17"  BorderBrush="#FFF5F0F0" Margin="62,-66,0,-39" Grid.Column="2">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

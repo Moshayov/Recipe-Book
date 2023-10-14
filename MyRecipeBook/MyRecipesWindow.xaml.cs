@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Windows.UI.Xaml.Controls;
 
 namespace MyRecipeBook
 {
@@ -22,6 +23,13 @@ namespace MyRecipeBook
         public MyRecipesWindow()
         {
             InitializeComponent();
+
         }
+        // Filter searche in ListView on text changed in TextBox
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+           // listView.Items.Filter = new Predicate<object>(NameFilter);
+        }
+       
     }
 }
