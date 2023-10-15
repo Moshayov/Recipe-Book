@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
         mc:Ignorable="d"
-        Title="AboutUsWindow" Height="300" Width="500">
+        Title="AboutUsWindow" Height="900" Width="1600">
     <Grid Background="#FFFFBBEB">
-        <Label Content="Welcome!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="66" Width="188" FontSize="38" FontFamily="Segoe Print" Foreground="#FF8B248C"/>
-        <Label Content="If you are a vegetarian person, or you are new to the world of vegetarianism, you&#xD;&#xA; must have wondered why most cooking websites do not take part in this topic.&#xD;&#xA; And here we come into the picture.&#xD;&#xA; Hey!&#xD;&#xA; We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation of&#xD;&#xA; foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy&#xD;&#xA; the content. &#xD;&#xA;For comments or clarifications please send an email to: &#xD;&#xA;VagiCookBook.gmail.com " HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="187" Width="469" FontWeight="Medium" Background="Transparent"/>
-        <Image HorizontalAlignment="Left" Height="66" Margin="354,198,0,0" VerticalAlignment="Top" Width="83" Source="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\תמונה1.png" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Welcome!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="126" Width="338" FontSize="60" FontFamily="Segoe Print" Foreground="#FF8B248C" Margin="0,52,0,0"/>
+        <Label Content="If you are a vegetarian person, or you are new to the world of vegetarianism, you&#xD;&#xA; must have wondered why most cooking websites do not take part in this topic.&#xD;&#xA; And here we come into the picture.&#xD;&#xA; Hey!&#xD;&#xA; We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation of&#xD;&#xA; foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy&#xD;&#xA; the content. &#xD;&#xA;For comments or clarifications please send an email to: &#xD;&#xA;VagiCookBook.gmail.com " HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Height="475" Width="1450" FontWeight="Medium" Background="Transparent" FontSize="30"/>
+        <Image HorizontalAlignment="Left" Height="258" Margin="1260,622,0,0" VerticalAlignment="Top" Width="231" Source="/תמונה1.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
