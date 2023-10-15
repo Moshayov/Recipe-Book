@@ -16,9 +16,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\USER\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\USER\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\sara\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\sara\\.nuget\\packages"
     ],
     "configProperties": {
       "Windows.ApplicationModel.DataTransfer.DragDrop.ExternalSupport": true,
