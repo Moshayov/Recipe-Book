@@ -4,41 +4,99 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
+        xmlns:converter="clr-namespace:MyRecipeBook.Converter"
         mc:Ignorable="d"
         Title="MyRecipesWindow" Height="900" Width="1600">
+    <Window.Resources>
+        <converter:ByteArrayToBitmapImageConverter x:Name="binaryConverter" x:Key="byteToImageConverter"/>
+        <converter:StringDocToFlowDocumentConverter x:Name="stringConverter" x:Key="strToFlowDocConverter"/>
+        <Style TargetType="ListViewItem">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid Height="147" VerticalAlignment="Top">
-            <Border BorderBrush="Black" BorderThickness="1" Background="#FFFFC0C0">
-                <Label x:Name="MyRecipeBook_lable" Content="My recipe book" Margin="629,37,629,36" FontSize="45" FontWeight="Medium" FontFamily="Comic Sans MS"/>
-            </Border>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="735*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FFC0C0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1600" Height="146">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="494*"/>
+                <ColumnDefinition Width="553*"/>
+                <ColumnDefinition Width="553*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"  Grid.Column="1" x:Name="MyRecipeBook_lable" Content="My recipe book" Margin="28,17,136,56" FontSize="45" FontWeight="Medium" FontFamily="Comic Sans MS"/>
         </Grid>
-        <Grid Margin="0,147,0,649">
-            <Border BorderBrush="Black" BorderThickness="1" Background="#FFFFE0E0">
-                <TextBlock TextWrapping="Wrap" Text="Search:" Margin="33,25,1482,24" FontWeight="Medium" FontSize="22"/>
-            </Border>
-        </Grid>
-        <Grid Margin="0,235,0,0">
-            <Border BorderBrush="Black" BorderThickness="1" Margin="366,222,0,0">
-                <ScrollViewer Margin="9,-9,-9,9"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="1,4,1233,0" Height="649" VerticalAlignment="Top">
-                <Button x:Name="Edit_Button" Content="Edit recipe" Margin="0,583,0,2" FontSize="26" FontWeight="Medium"/>
-            </Border>
-        </Grid>
-        <Grid Margin="368,235,0,425">
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,956,0">
-                <Grid Margin="-372,4,276,-360">
-                    <ListView d:ItemsSource="{d:SampleData ItemCount=5}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
+        <Grid Margin="0,147,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="376*"/>
+                <ColumnDefinition Width="1224*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150*"/>
+                    <RowDefinition Height="800*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <!--serch box-->
+                    <TextBlock  x:Name="Serch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search: "  FontWeight="Bold" VerticalAlignment="Top" Height="30" Width="133" FontSize="24" Margin="2,28,0,0" RenderTransformOrigin="0.564,-0.114" />
+                    <TextBox  x:Name="tbFilter" Background="WhiteSmoke" Text="" TextChanged="TextBox_TextChanged" Margin="92,24,23,34"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="0,-116,0,0"/>
+                    <!--list of recipes-->
+                    <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding Recipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
-            </Border>
+            </Grid>
+            <Grid Grid.Column="1" DataContext="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="233*"/>
+                    <RowDefinition Height="518*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="450*"/>
+                        <ColumnDefinition Width="774*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                        <!--imge view scroler-->
+                        
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
+                        <!--title of the recipe-->
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Text="{Binding Title}"/>
+                    </Border>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="854*"/>
+                        <ColumnDefinition Width="370*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <!--the view of the recipe-->
+                        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Document="{Binding Doc, Converter={StaticResource strToFlowDocConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <!--view of commnd nd rting-->
+                        
+                    </Grid>
+                </Grid>
+            </Grid>
         </Grid>
-        <TextBox x:Name="search_textBox" HorizontalAlignment="Left" Height="26" Margin="120,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" BorderBrush="#FFB69191" FontSize="17"/>
 
     </Grid>
+
+
 </Window>
