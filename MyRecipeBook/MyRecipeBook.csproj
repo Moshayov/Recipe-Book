@@ -24,6 +24,10 @@
     <None Remove="Image\recipe-book.png" />
     <None Remove="Image\תמונה1.png" />
     <None Remove="Image\תמונה6.png" />
+    <None Remove="View_Windows\1085428.png" />
+    <None Remove="View_Windows\chef2_116502.png" />
+    <None Remove="View_Windows\depositphotos_114588226-stock-illustration-chef-cartoon-icon-cooking-and.jpg" />
+    <None Remove="View_Windows\images.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +68,10 @@
     <Resource Include="Image\recipe-book.png" />
     <Resource Include="Image\תמונה1.png" />
     <Resource Include="Image\תמונה6.png" />
+    <Resource Include="View_Windows\1085428.png" />
+    <Resource Include="View_Windows\chef2_116502.png" />
+    <Resource Include="View_Windows\depositphotos_114588226-stock-illustration-chef-cartoon-icon-cooking-and.jpg" />
+    <Resource Include="View_Windows\images.jpeg" />
   </ItemGroup>
 
 </Project>
