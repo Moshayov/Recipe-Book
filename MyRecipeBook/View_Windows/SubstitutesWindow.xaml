@@ -1,0 +1,14 @@
+﻿<Window x:Class="MyRecipeBook.SubstitutesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyRecipeBook"
+        mc:Ignorable="d"
+        Title="FoodSubstitutes" Height="840" Width="660">
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="815" VerticalAlignment="Center" Width="660" Source="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\תמונה6.png"/>
+        <Button x:Name="closeButton" Content="X" HorizontalAlignment="Left" Margin="616,28,0,0" VerticalAlignment="Top" Click="Button_Click" Width="22" Foreground="#FFF8F4F4" Background="#FFF0C9C0" BorderBrush="#FFF1EDEC" FontWeight="Bold" RenderTransformOrigin="0.5,0.403"/>
+
+    </Grid>
+</Window>

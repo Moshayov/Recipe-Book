@@ -25,7 +25,7 @@
             <RowDefinition Height="109*"/>
             <RowDefinition Height="628*"/>
         </Grid.RowDefinitions>
-        <Border Background="#FFC0C0"   BorderBrush="Black" BorderThickness="2" Margin="0,-2,0,4"/>
+        <Border Background="#FFC0C0" BorderBrush="Black" BorderThickness="2" Margin="0,-2,0,4"/>
         <Grid Grid.Row="0" Background="#FFC0C0" Margin="0,37,0,37">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="223*"/>
@@ -43,7 +43,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
                 <Button.Background>
-                    <ImageBrush ImageSource="/recipe-book (3).png" Stretch="None"/>
+                    <ImageBrush ImageSource="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\recipe-book (3).png" Stretch="None"/>
                 </Button.Background>
             </Button>
 

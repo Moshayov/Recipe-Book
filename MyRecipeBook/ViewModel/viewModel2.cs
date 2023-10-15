@@ -22,6 +22,7 @@ namespace MyRecipeBook.ViewModel
         private ObservableCollection<string> countries = null;
         private ObservableCollection<Recipe2> recipes = null;
         private ObservableCollection<Recipe2> allRecipes = null;
+        private ObservableCollection<Recipe2> myRecipes = null;
         public ICommand HomeCommand { get; }
         public ICommand RecipesForBeginnersCommand { get; }
         public ICommand RecommendedRecipesCommand { get; }
@@ -34,20 +35,19 @@ namespace MyRecipeBook.ViewModel
 
         public viewModel2()
         {
-          //  AddRecipe r = new AddRecipe();
-          //  r.UpdateDb();
-             Recipes = get_recipes();
+            Recipes = get_recipes();
             Countries = new ObservableCollection<string>();
             NewRecipe = new Recipe2();
             AllRecipes = get_recipes();
-            // Initialize your commands
-           // addCommand = new DelegateCommand(Executeadd);
+            MyRecipes = new ObservableCollection<Recipe2>(Recipes.Where(recipe => recipe.Is_Mine == true).ToList());
+            // Initialize  commands
             HomeCommand = new DelegateCommand(ExecuteHome);
             RecipesForBeginnersCommand = new DelegateCommand(ExecuteRecipesForBeginners);
             RecommendedRecipesCommand = new DelegateCommand(ExecuteRecommendedRecipes);
             SubstitutesCommand = new DelegateCommand(ExecuteSubstitutesForComponents);
             AboutUsCommand = new DelegateCommand(ExecuteAboutUs);
             SearchCommand = new DelegateCommand(SearchCommandExecute);
+
         }
 
         public ObservableCollection<Recipe2> AllRecipes
@@ -62,6 +62,13 @@ namespace MyRecipeBook.ViewModel
         {
             get => recipes;
             set => SetProperty(ref recipes, value);
+        }
+
+        // Recipes Collection
+        public ObservableCollection<Recipe2> MyRecipes
+        {
+            get => myRecipes;
+            set => SetProperty(ref myRecipes, value);
         }
 
         // Recipes Countries Collection

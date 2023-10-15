@@ -13,17 +13,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="18306654.jpg" />
-    <None Remove="34008983.png" />
-    <None Remove="40216996.jpg" />
-    <None Remove="46354889.jpg" />
-    <None Remove="brown.png" />
-    <None Remove="icons8-recipe-book-64.png" />
-    <None Remove="noun-recipe-book-1689198.png" />
-    <None Remove="recipe-book %283%29.png" />
-    <None Remove="recipe-book.png" />
-    <None Remove="תמונה1.png" />
-    <None Remove="תמונה6.png" />
+    <None Remove="Image\18306654.jpg" />
+    <None Remove="Image\34008983.png" />
+    <None Remove="Image\40216996.jpg" />
+    <None Remove="Image\46354889.jpg" />
+    <None Remove="Image\brown.png" />
+    <None Remove="Image\icons8-recipe-book-64.png" />
+    <None Remove="Image\noun-recipe-book-1689198.png" />
+    <None Remove="Image\recipe-book %283%29.png" />
+    <None Remove="Image\recipe-book.png" />
+    <None Remove="Image\תמונה1.png" />
+    <None Remove="Image\תמונה6.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,17 +53,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="18306654.jpg" />
-    <Resource Include="34008983.png" />
-    <Resource Include="40216996.jpg" />
-    <Resource Include="46354889.jpg" />
-    <Resource Include="brown.png" />
-    <Resource Include="icons8-recipe-book-64.png" />
-    <Resource Include="noun-recipe-book-1689198.png" />
-    <Resource Include="recipe-book (3).png" />
-    <Resource Include="recipe-book.png" />
-    <Resource Include="תמונה1.png" />
-    <Resource Include="תמונה6.png" />
+    <Resource Include="Image\18306654.jpg" />
+    <Resource Include="Image\34008983.png" />
+    <Resource Include="Image\40216996.jpg" />
+    <Resource Include="Image\46354889.jpg" />
+    <Resource Include="Image\brown.png" />
+    <Resource Include="Image\icons8-recipe-book-64.png" />
+    <Resource Include="Image\noun-recipe-book-1689198.png" />
+    <Resource Include="Image\recipe-book (3).png" />
+    <Resource Include="Image\recipe-book.png" />
+    <Resource Include="Image\תמונה1.png" />
+    <Resource Include="Image\תמונה6.png" />
   </ItemGroup>
 
 </Project>

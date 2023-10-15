@@ -11,7 +11,7 @@ namespace BL
     internal class Class1
     {
         //stam
-        public class recipe2 : INotifyPropertyChanged
+        public class recipe2 
         {
             public int Id { get; set; }
             public string Title { get; set; }
@@ -89,7 +89,7 @@ namespace BL
             {
                 DateTime date = DateTime.Now;
                 DateTime date2 = date.AddDays(7);
-                recipe.usageDates+(HebCalLogic.)
+               // recipe.usageDates+(HebCalLogic.)
                    ////////continiue
                 
             }

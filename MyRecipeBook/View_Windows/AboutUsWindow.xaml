@@ -1,0 +1,25 @@
+﻿<Window x:Class="MyRecipeBook.AboutUsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyRecipeBook"
+        mc:Ignorable="d"
+        Title="AboutUsWindow" Height="300" Width="500">
+    <Grid Background="#FFFFBBEB">
+        <Label Content="Welcome!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="66" Width="188" FontSize="38" FontFamily="Segoe Print" Foreground="#FF8B248C"/>
+        <Label Content="If you are a vegetarian person, or you are new to the world of vegetarianism, you&#xD;&#xA; must have wondered why most cooking websites do not take part in this topic.&#xD;&#xA; And here we come into the picture.&#xD;&#xA; Hey!&#xD;&#xA; We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation of&#xD;&#xA; foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy&#xD;&#xA; the content. &#xD;&#xA;For comments or clarifications please send an email to: &#xD;&#xA;VagiCookBook.gmail.com " HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="187" Width="469" FontWeight="Medium" Background="Transparent"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="354,198,0,0" VerticalAlignment="Top" Width="83" Source="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\תמונה1.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="19.395"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="closing_button_" Content="X" HorizontalAlignment="Left" Margin="474,10,0,0" VerticalAlignment="Top" Height="17" Width="16" RenderTransformOrigin="0.717,0.973" Background="#FFFFBBEB" BorderBrush="#FFFFBBEB" FontWeight="Medium" FontSize="10" Foreground="#FF8B248C" Click="closing_button__Click"/>
+
+    </Grid>
+</Window>

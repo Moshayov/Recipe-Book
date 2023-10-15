@@ -7,36 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AboutUsWindow.xaml.cs">
+    <Compile Update="View_Windows\AboutUsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="AddEdit.xaml.cs">
+    <Compile Update="View_Windows\AddEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SubstitutesWindow.xaml.cs">
+    <Compile Update="View_Windows\SubstitutesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MyRecipesWindow.xaml.cs">
+    <Compile Update="View_Windows\MyRecipesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AboutUsWindow.xaml">
+    <Page Update="View_Windows\AboutUsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="AddEdit.xaml">
+    <Page Update="View_Windows\AddEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SubstitutesWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="View_Windows\SubstitutesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="mainWindow2.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MyRecipesWindow.xaml">
+    <Page Update="View_Windows\MyRecipesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

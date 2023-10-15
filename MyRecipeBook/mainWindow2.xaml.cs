@@ -23,7 +23,7 @@ namespace MyRecipeBook
             DataContext = viewModel;
         }
 
-       
+
         // Filter searche in ListView on text changed in TextBox
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
@@ -34,14 +34,14 @@ namespace MyRecipeBook
         {
             Recipe2 recipe = obj as Recipe2;
 
-            bool name = recipe.Title.ToLower().Contains(tbFilter.Text.ToLower())||recipe.Ingredients.ToLower().Contains(tbFilter.Text.ToLower());
-             //bool name = recipe.Title.ToLower().Contains(tbFilter.Text.ToLower());
+            bool name = recipe.Title.ToLower().Contains(tbFilter.Text.ToLower()) || recipe.Ingredients.ToLower().Contains(tbFilter.Text.ToLower());
+            //bool name = recipe.Title.ToLower().Contains(tbFilter.Text.ToLower());
             return name;
         }
 
         private void add_to_my_recipes_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (listView.SelectedIndex == -1)
             {
                 MessageBox.Show("please choose a recipe to add to your recipe book");
@@ -61,7 +61,7 @@ namespace MyRecipeBook
                 viewModel.Recipes[listView.SelectedIndex].Is_Mine = true;
                 MessageBox.Show("The recipe added suucsesfully to your recipe book ");
             }
-            
+
         }
 
         private void ExecuteMyRecipes(object sender, RoutedEventArgs e)
@@ -74,6 +74,6 @@ namespace MyRecipeBook
             myRecipesWindow.Show();
         }
 
-        
+
     }
 }
