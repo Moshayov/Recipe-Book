@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP;HAS_UNO;UNO_HAS_FRAMEWORKELEMENT_MEASUREOVERRIDE;UNO_HAS_NO_IDEPENDENCYOBJECT;UNO_REFERENCE_API
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\App.xaml
-5-525442434
+71893084707
 
-241957726156
+26-1599997372
 369-381758195
-mainWindow2.xaml;View_Windows\AboutUsWindow.xaml;View_Windows\AddEdit.xaml;View_Windows\MyRecipesWindow.xaml;View_Windows\SubstitutesWindow.xaml;
+EditWindow.xaml;mainWindow2.xaml;View_Windows\AboutUsWindow.xaml;View_Windows\AddEdit.xaml;View_Windows\EditWindow.xaml;View_Windows\MyRecipesWindow.xaml;View_Windows\SubstitutesWindow.xaml;
 
 True
 

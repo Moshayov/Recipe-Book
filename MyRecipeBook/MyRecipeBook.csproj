@@ -74,4 +74,10 @@
     <Resource Include="View_Windows\images.jpeg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="EditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

@@ -361,3 +361,5 @@ C:\Users\sara\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyR
 C:\Users\sara\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.genruntimeconfig.cache
 C:\Users\sara\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\ref\MyRecipeBook.dll
 C:\Users\sara\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\EditWindow.g.cs
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\EditWindow.g.cs
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\EditWindow.g.cs

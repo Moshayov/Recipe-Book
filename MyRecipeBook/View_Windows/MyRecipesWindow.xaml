@@ -68,7 +68,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="0,-1,0,1">
                         <!--imge view scroler-->
-
+                         
                     </Border>
                     <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="0,-1,0,1">
                         <!--title of the recipe
@@ -94,8 +94,8 @@
                             <!--view of commnd nd rting-->
                         </Grid>
                         <Grid Grid.Row="1">
-                            <Button Content="Edit " HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" Height="39" Width="122" Margin="0,52,0,0" Background="#FFF997C8"/>
-                            <Button Content="add" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="124,50,0,0" Height="41" Width="118" VerticalAlignment="Top" Background="#FFF997C8"/>
+                            <Button Content="Edit " HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" Height="41" Width="122" Margin="0,38,0,0" Background="#FFF997C8"/>
+                            <Button Content="add" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="124,38,0,0" Height="41" Width="118" VerticalAlignment="Top" Background="#FFF997C8"/>
                             <!--button edit/dd-->
                         </Grid>
                     </Grid>
