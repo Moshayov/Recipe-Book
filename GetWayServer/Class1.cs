@@ -30,6 +30,7 @@ namespace Recipes
         public List<Comment> Comments { get; set; } = new List<Comment>();
         public List<Rating> Ratings { get; set; } = new List<Rating>();
         public List<UsageDate> UsageDates { get; set; } = new List<UsageDate>();
+        public List<Images> imageFromRecipes { get; set; }=new List<Images>();
         public string Difficulty { get; set; }
         public string Portion { get; set; }
         public string Time { get; set; }
@@ -62,7 +63,13 @@ namespace Recipes
             DocumentData = new byte[0];
         }
 
-
+        public class Images
+        {
+            public int RecipeId { get; set; }  // Foreign key to Recipe
+            public recipe2 Recipe { get; set; }//Navigation property to Recipe
+            public byte[] ImageFile { get; set; }
+            public int imagId { get; set; }
+        }
         public class MethodItem
         {
             public int RecipeId { get; set; }  // Foreign key to Recipe
