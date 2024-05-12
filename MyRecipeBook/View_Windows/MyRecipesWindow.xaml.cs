@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.IO;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Recipes;
+using System.Windows.Controls;
 
 namespace MyRecipeBook
 {
@@ -50,6 +51,34 @@ namespace MyRecipeBook
             
         }
 
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                // Get the newly selected recipe
+                Recipe2 selectedRecipe = e.AddedItems[0] as Recipe2;
+
+                // Update the image with the selected recipe's image data
+                if (selectedRecipe != null)
+                {
+                    BitmapImage image = new BitmapImage();
+                    byte[] imageData = selectedRecipe.ImageFile; // Assuming ImageFile is a property containing image data
+                    if (imageData != null)
+                    {
+                        using (MemoryStream memStream = new MemoryStream(imageData))
+                        {
+                            image.BeginInit();
+                            image.CacheOption = BitmapCacheOption.OnLoad;
+                            image.StreamSource = memStream;
+                            image.EndInit();
+                            image.Freeze();
+                        }
+                        recipeImg.Source = image;
+                    }
+                }
+            }
+        }
+
         private void Find_Similr_Click(object sender, RoutedEventArgs e)
         {
             if(Find_Similr.Content.ToString() == "Find Similar")
@@ -83,6 +112,11 @@ namespace MyRecipeBook
                 }
                 recipeImg.Source = image;
             }
+        }
+
+        private void fresh_image(object sender, RoutedEventArgs e)
+        {
+
         }
         private void Next_Click(object sender, RoutedEventArgs e)
         {

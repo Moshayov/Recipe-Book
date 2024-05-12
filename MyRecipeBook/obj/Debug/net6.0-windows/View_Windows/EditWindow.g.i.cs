@@ -85,7 +85,7 @@ namespace MyRecipeBook.View_Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MyRecipeBook;V1.0.0.0;component/view_windows/editwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MyRecipeBook;component/view_windows/editwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View_Windows\EditWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

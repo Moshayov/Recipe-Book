@@ -58,6 +58,7 @@ namespace MyRecipeBook
                     dbContext.SaveChanges();
                 }
                 viewModel.Recipes[listView.SelectedIndex].Is_Mine = true;
+                ((viewModel2)DataContext).Updete();
                 MessageBox.Show("The recipe added suucsesfully to your recipe book ");
             }
 

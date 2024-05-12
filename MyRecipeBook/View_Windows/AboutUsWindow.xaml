@@ -8,8 +8,28 @@
         Title="AboutUsWindow" Height="900" Width="1600">
     <Grid Background="#FFFFBBEB">
         <Label Content="Welcome!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="126" Width="338" FontSize="60" FontFamily="Segoe Print" Foreground="#FF8B248C" Margin="0,52,0,0"/>
-        <Label Content="If you are a vegetarian person, or you are new to the world of vegetarianism, you&#xD;&#xA; must have wondered why most cooking websites do not take part in this topic.&#xD;&#xA; And here we come into the picture.&#xD;&#xA; Hey!&#xD;&#xA; We are Hadassah and Sarah, and we would like to make the issue of vegetarianism &#xD;&#xA;accessible in the world and give answers to vegetarians regarding the preparation of&#xD;&#xA; foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy&#xD;&#xA; the content. &#xD;&#xA;For comments or clarifications please send an email to: &#xD;&#xA;VagiCookBook.gmail.com " HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Height="475" Width="1450" FontWeight="Medium" Background="Transparent" FontSize="30"/>
-        <Image HorizontalAlignment="Left" Height="258" Margin="1260,622,0,0" VerticalAlignment="Top" Width="231" Source="/תמונה1.png" RenderTransformOrigin="0.5,0.5">
+        <TextBlock TextWrapping="Wrap" Height="475" FontSize="30"  Width="1450" Margin="75,229,75,180">
+                <Run Text="If you are a vegetarian person, or you are new to the world of vegetarianism, you"/>
+                <LineBreak/>
+                <Run Text=" must have wondered why most cooking websites do not take part in this topic."/>
+                <LineBreak/>
+                <Run Text=" And here we come into the picture."/>
+                <LineBreak/>
+                <Run Text=" Hey!"/>
+                <LineBreak/>
+                <Run Text=" We are Hadassah and Sarah, and we would like to make the issue of vegetarianism "/>
+                <LineBreak/>
+                <Run Text="accessible in the world and give answers to vegetarians regarding the preparation of"/>
+                <LineBreak/>
+                <Run Text=" foods rich in vitamins, as varied as possible and of course delicious! Hope you enjoy"/>
+                <LineBreak/>
+                <Run Text=" the content. "/>
+                <LineBreak/>
+                <Run Text="For comments or clarifications please send an email to: "/>
+                <LineBreak/>
+                <Run Text="VagiCookBook.gmail.com "/>
+        </TextBlock>
+        <Image HorizontalAlignment="Left" Height="258" Margin="1158,534,0,0" VerticalAlignment="Top" Width="231" Source="/Image/תמונה1.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,7 +39,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="closing_button_" Content="X" HorizontalAlignment="Left" Margin="474,10,0,0" VerticalAlignment="Top" Height="17" Width="16" RenderTransformOrigin="0.717,0.973" Background="#FFFFBBEB" BorderBrush="#FFFFBBEB" FontWeight="Medium" FontSize="10" Foreground="#FF8B248C" Click="closing_button__Click"/>
+        <Button x:Name="closing_button_" Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Height="107" Width="182" RenderTransformOrigin="0.717,0.973" 
+        Background="Transparent" BorderBrush="Transparent" Margin="0,-2,-32,0" FontWeight="ExtraBold" Foreground="White" Click="closing_button__Click"/>
 
     </Grid>
 </Window>

@@ -106,6 +106,7 @@ namespace MyRecipeBook
                     string is_good = imaggaController.Get(((viewModel2)DataContext).SelectedRecipe.Title, ImgeFiles);
                     if (is_good != "The image is good")
                     {
+                        MessageBox.Show(is_good);
                         MessageBox.Show("The image is not releted to the recipe Please upload a new one");
                     }
                     else

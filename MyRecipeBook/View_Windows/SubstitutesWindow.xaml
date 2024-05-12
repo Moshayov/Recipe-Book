@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="FoodSubstitutes" Height="840" Width="660">
     <Grid>
-        <Image HorizontalAlignment="Center" Height="815" VerticalAlignment="Center" Width="660" Source="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\תמונה6.png"/>
-        <Button x:Name="closeButton" Content="X" HorizontalAlignment="Left" Margin="616,28,0,0" VerticalAlignment="Top" Click="Button_Click" Width="22" Foreground="#FFF8F4F4" Background="#FFF0C9C0" BorderBrush="#FFF1EDEC" FontWeight="Bold" RenderTransformOrigin="0.5,0.403"/>
+        <Image HorizontalAlignment="Center" Height="815" VerticalAlignment="Center" Width="660" Source="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\תמונה6.png"/> 
+        <Button x:Name="closing_button_" Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Height="107" Width="182" RenderTransformOrigin="0.717,0.973" 
+        Background="Transparent" BorderBrush="Transparent" Margin="0,-9,-43,0" FontWeight="ExtraBold" Foreground="White" Click="Button_Click"/>
+
 
     </Grid>
 </Window>

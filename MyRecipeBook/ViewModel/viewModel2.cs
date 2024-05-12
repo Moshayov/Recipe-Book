@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -104,8 +105,9 @@ namespace MyRecipeBook.ViewModel
 
         public Byte[] NextExecute()
         {
+           
 
-                if (SelectedRecipe.Indexs < SelectedRecipe.imageFromRecipes.Count - 1)
+            if (SelectedRecipe.Indexs < SelectedRecipe.imageFromRecipes.Count - 1)
                 {
                     SelectedRecipe.Indexs++;
                     return SelectedRecipe.imageFromRecipes[SelectedRecipe.Indexs].ImageFile;
@@ -195,6 +197,9 @@ namespace MyRecipeBook.ViewModel
             }
 
         }
+
+      
+
 
         public void Back()
         {

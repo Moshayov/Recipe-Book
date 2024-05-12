@@ -47,10 +47,10 @@
                 <Grid  Grid.Row="1">
                     <Border BorderBrush="Black" BorderThickness="1"/>
                     <!--list of recipes-->
-                    <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding MyRecipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
+                    <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke"  SelectionChanged="ListView_SelectionChanged" ItemsSource="{Binding MyRecipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                              <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
+                                <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
