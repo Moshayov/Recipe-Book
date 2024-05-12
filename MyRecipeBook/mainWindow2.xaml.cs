@@ -19,7 +19,6 @@ namespace MyRecipeBook
         public mainWindow2()
         {
             InitializeComponent();
-
             DataContext = viewModel;
         }
 

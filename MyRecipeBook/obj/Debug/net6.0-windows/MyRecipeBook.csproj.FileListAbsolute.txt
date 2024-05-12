@@ -229,11 +229,9 @@ C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\Get
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\GetWayServer\appsettings.json
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\MyRecipeBook.d-bfalse.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\AboutUsWindow.g.cs
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\AddEdit.g.cs
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\MyRecipesWindow.g.cs
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\SubstitutesWindow.g.cs
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\AboutUsWindow.baml
-C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\AddEdit.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\MyRecipesWindow.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\SubstitutesWindow.baml
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\mainWindow2.g.cs
@@ -363,3 +361,15 @@ C:\Users\sara\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\ref
 C:\Users\sara\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\EditWindow.g.cs
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\EditWindow.g.cs
 C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\EditWindow.g.cs
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\EditWindow.baml
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\View_Windows\EditWindow.baml
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\obj\Debug\net6.0-windows\App.baml
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\BL.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\DAL.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\DP.dll
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\BL.pdb
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\DAL.pdb
+C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\bin\Debug\net6.0-windows\DP.pdb

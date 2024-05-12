@@ -10,7 +10,10 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using static Recipes.recipe2;
 
 namespace MyRecipeBook.ViewModel
 {
@@ -20,6 +23,9 @@ namespace MyRecipeBook.ViewModel
         private Recipe2 selectedRecipe = null;
         private Recipe2 newRecipe = null;
         private Recipe2 tempRecipe = null;
+        private Byte[] imgeFile = null;
+        private FlowDocument comments_rting=null;
+        private List<int> rting=new List<int>();
         private ObservableCollection<string> countries = null;
         private ObservableCollection<Recipe2> recipes = null;
         private ObservableCollection<Recipe2> allRecipes = null;
@@ -30,12 +36,18 @@ namespace MyRecipeBook.ViewModel
         public ICommand SubstitutesCommand { get; }
         public ICommand AboutUsCommand { get; }
         public ICommand SearchCommand { get; }
-       // public ICommand addCommand { get; }
-
+       // public ICommand PreviousCommand { get; }
+       // public ICommand NextCommand { get; }
+        private int index = -1;
         private int cbIndex = 0;
 
         public viewModel2()
         {
+            for (int i = 1; i < 6; i++)
+            {
+                Rting.Add(i);
+            }
+            Indexs = -1;
             Recipes = get_recipes();
             Countries = new ObservableCollection<string>();
             NewRecipe = new Recipe2();
@@ -48,7 +60,59 @@ namespace MyRecipeBook.ViewModel
             SubstitutesCommand = new DelegateCommand(ExecuteSubstitutesForComponents);
             AboutUsCommand = new DelegateCommand(ExecuteAboutUs);
             SearchCommand = new DelegateCommand(SearchCommandExecute);
+           // PreviousCommand = new DelegateCommand(PreviousButtonExecute);
+           // NextCommand = new DelegateCommand(NextExecute);     
+            Image2 = NewRecipe.ImageSourceToBytes(new JpegBitmapEncoder(), new BitmapImage(new System.Uri(@"C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\nopreview.jpg"))); ;
+        }
 
+        public FlowDocument Comments_rting
+        {
+            get => comments_rting;
+            set => SetProperty(ref comments_rting, value);
+        }
+        public List<int> Rting
+        {
+            get => rting;
+            set => SetProperty(ref rting, value);
+        }
+
+        public Byte[] Image2
+        {
+            get => imgeFile;
+            set => SetProperty(ref imgeFile, value);
+        }
+
+        public Byte[] ImgeFile2
+        {
+            get => imgeFile;
+            set => SetProperty(ref imgeFile, value);
+        }
+
+        public Byte[]  PreviousButtonExecute()
+        {
+            if (SelectedRecipe.Indexs >= 0)
+            {
+                if (SelectedRecipe.Indexs != 0)
+                {
+                    SelectedRecipe.Indexs--;
+                }
+                return Recipes.First(r => r.Id == SelectedRecipe.Id).imageFromRecipes[SelectedRecipe.Indexs].ImageFile;
+            }
+            return null;
+           
+        }
+
+        public Byte[] NextExecute()
+        {
+
+                if (SelectedRecipe.Indexs < SelectedRecipe.imageFromRecipes.Count - 1)
+                {
+                    SelectedRecipe.Indexs++;
+                    return SelectedRecipe.imageFromRecipes[SelectedRecipe.Indexs].ImageFile;
+                    
+                }
+            return null;
+           
         }
 
         public ObservableCollection<Recipe2> AllRecipes
@@ -63,6 +127,11 @@ namespace MyRecipeBook.ViewModel
         {
             get => recipes;
             set => SetProperty(ref recipes, value);
+        }
+        public int Indexs
+        {
+            get => index;
+            set => SetProperty(ref index, value);
         }
 
         // Recipes Collection
@@ -108,7 +177,7 @@ namespace MyRecipeBook.ViewModel
         public ObservableCollection<Recipe2> get_recipes()
         {
             AddRecipe d = new AddRecipe();
-             //d.UpdateDb();
+           d.UpdateDb();
             using (var dbContext = new RecipeDbContext()) // Create your DbContext instance
             {
                 List<recipe2> recipes = dbContext.Recipes.ToList();
@@ -127,6 +196,18 @@ namespace MyRecipeBook.ViewModel
 
         }
 
+        public void Back()
+        {
+            MyRecipes = new ObservableCollection<Recipe2>(AllRecipes.Where(recipe => recipe.Is_Mine == true).ToList());
+         
+          
+        }
+
+        public void Updete()
+        {
+            Recipes = get_recipes();//every time tht the db chenge we need to updete the view
+            MyRecipes= new ObservableCollection<Recipe2>(Recipes.Where(recipe => recipe.Is_Mine == true).ToList());
+        }
 
         private void ExecuteHome(object parameter)
         {
@@ -163,7 +244,7 @@ namespace MyRecipeBook.ViewModel
         {
             // Handle Recommended Recipes command logic
             // Filter and display recommended recipes with an average rating greater than 4
-            var recommendedRecipes = Recipes.Where(recipe => recipe.Ratings.Average(rating => rating.Stars) >= 4);
+            var recommendedRecipes = Recipes.Where(recipe => recipe.Rating>= 4);
             if (recommendedRecipes == null)
                 return;
             Recipes = new ObservableCollection<Recipe2>(recommendedRecipes.ToList());
@@ -202,7 +283,43 @@ namespace MyRecipeBook.ViewModel
             }
         }
 
+        public bool isSimilar(recipe2 recipe1, recipe2 recipe2)
+        {
+            List<string> title1 = new List<string>();
+            List<string> title2 = new List<string>();
+            foreach (var word in recipe1.Title.Split(' '))
+            {
+                title1.Add(word);
+            }
+            foreach (var word in recipe2.Title.Split(' '))
+            {
+                title2.Add(word);
+            }
+            foreach (var word1 in title1)
+            {
+                foreach (var word2 in title2)
+                {
+                    if (word1.ToLower().Equals(word2.ToLower()) && word1.ToLower() != "with" && word1.ToLower() != "or" && word1.ToLower() != "to" && word1.ToLower() != "and" && word1.ToLower() != "by")
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
+        public void Cenge_MyRecipe()
+        {
+            ObservableCollection<Recipe2> my_simlir_recipes = new ObservableCollection<Recipe2>();
+            foreach(var recipe in MyRecipes)
+            {
+                if (isSimilar(SelectedRecipe, recipe))
+                {
+                    my_simlir_recipes.Add(recipe);
+                }
+            }
+            MyRecipes = my_simlir_recipes;
+        }
     }
 }
 

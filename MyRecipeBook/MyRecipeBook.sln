@@ -1,14 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRecipeBook", "MyRecipeBook.csproj", "{464630B7-FA1C-46F8-8E19-CC2D6E85C4DD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{24D1627B-807C-4466-A156-18F1CA5B718B} = {24D1627B-807C-4466-A156-18F1CA5B718B}
+		{5446CCA8-DB53-4ECF-B5C5-7D2A9CFA16CE} = {5446CCA8-DB53-4ECF-B5C5-7D2A9CFA16CE}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetWayServer", "..\GetWayServer\GetWayServer.csproj", "{24D1627B-807C-4466-A156-18F1CA5B718B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5446CCA8-DB53-4ECF-B5C5-7D2A9CFA16CE} = {5446CCA8-DB53-4ECF-B5C5-7D2A9CFA16CE}
+		{5921178A-C44E-454C-BC83-01F4E662C523} = {5921178A-C44E-454C-BC83-01F4E662C523}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "..\DAL\DAL.csproj", "{8CC3A580-397A-488D-81AB-39BC39EC285D}"
 EndProject

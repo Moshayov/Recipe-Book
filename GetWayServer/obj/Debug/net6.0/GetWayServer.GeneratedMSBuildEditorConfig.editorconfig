@@ -54,3 +54,30 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\USER\source\repos\Recipe-Book\GetWayServer
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/USER/source/repos/Recipe-Book/BL/BL.csproj]
+build_metadata.AdditionalFiles.SourceItemGroup = ProjectReference
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\BL\BL.csproj
+build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\BL\BL.csproj
+build_metadata.AdditionalFiles.XamlRuntime = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/Recipe-Book/PL/DP.csproj]
+build_metadata.AdditionalFiles.SourceItemGroup = ProjectReference
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\PL\DP.csproj
+build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\PL\DP.csproj
+build_metadata.AdditionalFiles.XamlRuntime = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/Recipe-Book/DAL/DAL.csproj]
+build_metadata.AdditionalFiles.SourceItemGroup = ProjectReference
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\DAL\DAL.csproj
+build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\DAL\DAL.csproj
+build_metadata.AdditionalFiles.XamlRuntime = 
+build_metadata.AdditionalFiles.CssScope = 

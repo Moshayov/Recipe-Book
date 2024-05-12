@@ -9,11 +9,16 @@
       {
         "name": "Microsoft.WindowsDesktop.App",
         "version": "6.0.0"
+      },
+      {
+        "name": "Microsoft.AspNetCore.App",
+        "version": "6.0.0"
       }
     ],
     "additionalProbingPaths": [
       "C:\\Users\\USER\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\sara\\.nuget\\packages"
+      "C:\\Users\\USER\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
       "Windows.ApplicationModel.DataTransfer.DragDrop.ExternalSupport": true,

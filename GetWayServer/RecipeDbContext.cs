@@ -18,8 +18,9 @@ namespace GetWayServer
         {
             modelBuilder.Entity<recipe2>(entity =>
             {
+                /*
                 entity.HasKey(r => r.Id);
-
+                
                 // Configure relationships
                 entity.HasMany(r => r.Comments)
                     .WithOne(c => c.Recipe)
@@ -32,7 +33,7 @@ namespace GetWayServer
                 entity.HasMany(r => r.UsageDates)
                     .WithOne(u => u.Recipe)
                     .HasForeignKey(u => u.RecipeId);
-
+                */
                 // Configure the Method property as owned type (complex type)
                 entity.OwnsMany(r => r.Instructions, method =>
                 {
@@ -41,6 +42,15 @@ namespace GetWayServer
                     method.Property<string>("Instruction").IsRequired(); // The actual instruction text
                     // Define the composite key
                     method.HasKey("RecipeId", "StepNumber");
+                });
+                // Configure the Method property as owned type (complex type)
+                entity.OwnsMany(r => r.imageFromRecipes, method =>
+                {
+                    method.Property<int>("imagId"); // Foreign key to recipe2
+                    method.Property<byte[]>("ImageFile"); // 
+                    method.Property<int>("RecipeId").IsRequired();
+                    // Define the composite key
+                    method.HasKey("RecipeId", "imagId");
                 });
             });
         }

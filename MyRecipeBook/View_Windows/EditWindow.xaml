@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook.View_Windows"
         mc:Ignorable="d"
-        x:Name="EditWindow"
+        x:Name="editWindow"
         Background="#FFC0C0" 
         Title="EditWindow" Height="900" Width="600">
-
     <!--<Window.Resources>
         <converter:ByteArrayToBitmapImageConverter x:Name="binaryConverter" x:Key="byteToImageConverter"/>
     </Window.Resources>-->
@@ -45,7 +44,5 @@
           
         </Grid>
         
-
-
     </Grid>
 </Window>

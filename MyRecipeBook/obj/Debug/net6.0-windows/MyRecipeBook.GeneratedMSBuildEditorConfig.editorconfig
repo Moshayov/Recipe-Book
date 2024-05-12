@@ -73,14 +73,6 @@ build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book
 build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\View_Windows\AboutUsWindow.xaml
 build_metadata.AdditionalFiles.XamlRuntime = Wpf
 
-[C:/Users/USER/source/repos/Recipe-Book/MyRecipeBook/View_Windows/AddEdit.xaml]
-build_metadata.AdditionalFiles.SourceItemGroup = Page
-build_metadata.AdditionalFiles.Link = 
-build_metadata.AdditionalFiles.TargetPath = 
-build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\View_Windows\AddEdit.xaml
-build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\View_Windows\AddEdit.xaml
-build_metadata.AdditionalFiles.XamlRuntime = Wpf
-
 [C:/Users/USER/source/repos/Recipe-Book/MyRecipeBook/View_Windows/EditWindow.xaml]
 build_metadata.AdditionalFiles.SourceItemGroup = Page
 build_metadata.AdditionalFiles.Link = 
@@ -119,4 +111,28 @@ build_metadata.AdditionalFiles.Link =
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\GetWayServer\GetWayServer.csproj
 build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\GetWayServer\GetWayServer.csproj
+build_metadata.AdditionalFiles.XamlRuntime = 
+
+[C:/Users/USER/source/repos/Recipe-Book/BL/BL.csproj]
+build_metadata.AdditionalFiles.SourceItemGroup = ProjectReference
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\BL\BL.csproj
+build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\BL\BL.csproj
+build_metadata.AdditionalFiles.XamlRuntime = 
+
+[C:/Users/USER/source/repos/Recipe-Book/DAL/DAL.csproj]
+build_metadata.AdditionalFiles.SourceItemGroup = ProjectReference
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\DAL\DAL.csproj
+build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\DAL\DAL.csproj
+build_metadata.AdditionalFiles.XamlRuntime = 
+
+[C:/Users/USER/source/repos/Recipe-Book/PL/DP.csproj]
+build_metadata.AdditionalFiles.SourceItemGroup = ProjectReference
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = C:\Users\USER\source\repos\Recipe-Book\PL\DP.csproj
+build_metadata.AdditionalFiles.Identity = C:\Users\USER\source\repos\Recipe-Book\PL\DP.csproj
 build_metadata.AdditionalFiles.XamlRuntime = 

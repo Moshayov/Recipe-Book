@@ -22,4 +22,9 @@
     <PackageReference Include="Uno.UI" Version="4.10.26" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+    <ProjectReference Include="..\PL\DP.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -20,9 +20,9 @@ namespace MyRecipeBook.ViewModel
         private DelegateCommand refCountries = null;
         private ObservableCollection<Recipe2> recipes = null;
         private ObservableCollection<string> countries = null;
-        private ObservableCollection<Comment> comments = null;
-        private ObservableCollection<Rating> ratings = null;
-        private ObservableCollection<UsageDate> usageDates = null;
+        //private ObservableCollection<Comment> comments = null;
+       // private ObservableCollection<Rating> ratings = null;
+       // private ObservableCollection<UsageDate> usageDates = null;
         private ObservableCollection<int> myRecipes = null;
         private int cbIndex = 0;
 
@@ -30,9 +30,9 @@ namespace MyRecipeBook.ViewModel
         {
             Recipes = new ObservableCollection<Recipe2>(_recipeRepository.GetRecipes());
             Countries = new ObservableCollection<string>();
-            comments = new ObservableCollection<Comment>();
-            ratings = new ObservableCollection<Rating>();
-            usageDates = new ObservableCollection<UsageDate>();
+            //comments = new ObservableCollection<Comment>();
+            //ratings = new ObservableCollection<Rating>();
+           // usageDates = new ObservableCollection<UsageDate>();
             NewRecipe = new Recipe2();
             myRecipes = new ObservableCollection<int>();
         }
@@ -69,7 +69,7 @@ namespace MyRecipeBook.ViewModel
                 }
             }
         }
-
+        /*
         //Comments  Collection
         public ObservableCollection<Comment> Comments
         {
@@ -83,6 +83,7 @@ namespace MyRecipeBook.ViewModel
                 }
             }
         }
+        
         //ratings  Collection
         public ObservableCollection<Rating> Ratings
         {
@@ -96,6 +97,7 @@ namespace MyRecipeBook.ViewModel
                 }
             }
         }
+        
         //ratings  Collection
         public ObservableCollection<UsageDate> UsageDates
         {
@@ -108,7 +110,7 @@ namespace MyRecipeBook.ViewModel
                     OnPropertyChanged();
                 }
             }
-        }
+        }*/
 
         //Recipes for my recipe book
         public ObservableCollection<int> MyRecipes

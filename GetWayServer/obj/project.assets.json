@@ -2658,6 +2658,51 @@
           "buildTransitive/netstandard2.0/Uno.UI.props": {},
           "buildTransitive/netstandard2.0/Uno.UI.targets": {}
         }
+      },
+      "BL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DAL": "1.0.0",
+          "DP": "1.0.0",
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "110.2.0"
+        },
+        "compile": {
+          "bin/placeholder/BL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.dll": {}
+        }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DP": "1.0.0",
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "110.2.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "DP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "110.2.0"
+        },
+        "compile": {
+          "bin/placeholder/DP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DP.dll": {}
+        }
       }
     }
   },
@@ -9330,10 +9375,27 @@
         "uno.ui.4.10.26.nupkg.sha512",
         "uno.ui.nuspec"
       ]
+    },
+    "BL/1.0.0": {
+      "type": "project",
+      "path": "../BL/BL.csproj",
+      "msbuildProject": "../BL/BL.csproj"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "DP/1.0.0": {
+      "type": "project",
+      "path": "../PL/DP.csproj",
+      "msbuildProject": "../PL/DP.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BL >= 1.0.0",
+      "DP >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Microsoft.EntityFrameworkCore >= 7.0.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.12",
@@ -9346,19 +9408,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sara\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sara\\source\\repos\\Recipe-Book\\GetWayServer\\GetWayServer.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Recipe-Book\\GetWayServer\\GetWayServer.csproj",
       "projectName": "GetWayServer",
-      "projectPath": "C:\\Users\\sara\\source\\repos\\Recipe-Book\\GetWayServer\\GetWayServer.csproj",
-      "packagesPath": "C:\\Users\\sara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sara\\source\\repos\\Recipe-Book\\GetWayServer\\obj\\",
+      "projectPath": "C:\\Users\\USER\\source\\repos\\Recipe-Book\\GetWayServer\\GetWayServer.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\source\\repos\\Recipe-Book\\GetWayServer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9366,13 +9433,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://packagesource": {}
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USER\\source\\repos\\Recipe-Book\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\USER\\source\\repos\\Recipe-Book\\BL\\BL.csproj"
+            },
+            "C:\\Users\\USER\\source\\repos\\Recipe-Book\\PL\\DP.csproj": {
+              "projectPath": "C:\\Users\\USER\\source\\repos\\Recipe-Book\\PL\\DP.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -9443,7 +9517,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

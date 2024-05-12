@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyRecipeBook"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:converter="clr-namespace:MyRecipeBook.Converter"
         mc:Ignorable="d"
         Title="MyRecipesWindow" Height="900" Width="1600">
@@ -45,57 +46,62 @@
                 </Grid>
                 <Grid  Grid.Row="1">
                     <Border BorderBrush="Black" BorderThickness="1"/>
-                    <!--list of recipes
+                    <!--list of recipes-->
                     <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding MyRecipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
+                              <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    -->
                 </Grid>
             </Grid>
-            <Grid Grid.Column="1" DataContext="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
+            <Grid  Grid.Column="1" DataContext="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="233*"/>
                     <RowDefinition Height="518*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" RenderTransformOrigin="0.511,0.453" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="450*"/>
                         <ColumnDefinition Width="774*"/>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="0,-1,0,1">
-                        <!--imge view scroler-->
-                         
+                    <Grid Grid.Column="0" Margin="-2,0,2,0">
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="0,-1,0,1">
+                            <Border BorderBrush="Black" BorderThickness="1" Margin="-1,0,0,50">
+                                <Image x:Name="recipeImg"  Source="{Binding ImageFile, Converter={StaticResource byteToImageConverter}}" Stretch="Fill" Width="450" VerticalAlignment="Stretch" StretchDirection="Both" />
+                            </Border>
+                        </Border>
+                        <Button x:Name="previous" Click="Previus_Click" Content="Previous" Style="{StaticResource MaterialDesignFlatButton}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" />
+                        <Button x:Name="next" Click="Next_Click"   Content="Next" Style="{StaticResource MaterialDesignFlatButton}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"  />
+                    </Grid>
+                    <Border BorderBrush="Black"  BorderThickness="1" Grid.Column="1" Margin="0,-1,0,1">
+                        <!--title of the recipe-->
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Text="{Binding Title}"/>
                     </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="0,-1,0,1">
-                        <!--title of the recipe
-                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Text="{Binding Title}"/>-->
-                    </Border>
-
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="983*"/>
-                        <ColumnDefinition Width="241*"/>
+                        <ColumnDefinition Width="971*"/>
+                        <ColumnDefinition Width="253*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <!--the view of the recipe
-                        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Document="{Binding Doc, Converter={StaticResource strToFlowDocConverter}, UpdateSourceTrigger=PropertyChanged}"/>-->
+                        <!--the view of the recipe-->
+                        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Document="{Binding Doc, Converter={StaticResource strToFlowDocConverter}, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="425*"/>
-                            <RowDefinition Height="93*"/>
+                            <RowDefinition Height="330*"/>
+                            <RowDefinition Height="188*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
+                        <Grid Grid.Row="0" Margin="0,0,0,126" Grid.RowSpan="2" >
+                            <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,-127"/>
+                            <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto"  Document="{Binding Doc_Comments, Converter={StaticResource strToFlowDocConverter}, UpdateSourceTrigger=PropertyChanged}"/>
                             <!--view of commnd nd rting-->
                         </Grid>
-                        <Grid Grid.Row="1">
-                            <Button Content="Edit " HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" Height="41" Width="122" Margin="0,38,0,0" Background="#FFF997C8"/>
-                            <Button Content="add" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="124,38,0,0" Height="41" Width="118" VerticalAlignment="Top" Background="#FFF997C8"/>
+                        <Grid Grid.Row="1" Margin="0,64,0,0">
+                            <Button Content="Edit/add" Click="edit_rting_Click" HorizontalAlignment="Left" Background="#FFF385EA" BorderBrush="#FFF385EA" Margin="128,18,0,0" VerticalAlignment="Top" Height="56" Width="115"/>
+                            <Button x:Name="Find_Similr" Content="Find Similar" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" Height="56" Width="115" Background="#FFF385EA" BorderBrush="#FFF385EA" Click="Find_Similr_Click"/>
                             <!--button edit/dd-->
                         </Grid>
                     </Grid>

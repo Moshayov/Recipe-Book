@@ -3,7 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MyRecipeBook"
              StartupUri="mainWindow2.xaml">
+
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Material Design Resources -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Cyan.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Custom application settings -->
+            <local:AppSettings x:Key="AppSettings">
+                <!-- Database settings -->
+                <local:AppSettings.DatabaseName>FoodBlog</local:AppSettings.DatabaseName>
+                <local:AppSettings.TableName>Recipes</local:AppSettings.TableName>
+            </local:AppSettings>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -29,11 +29,11 @@
         <Grid Grid.Row="0" Background="#FFC0C0" Margin="0,37,0,37">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="223*"/>
-                <ColumnDefinition Width="441*"/>
-                <ColumnDefinition Width="136*"/>
+                <ColumnDefinition Width="431*"/>
+                <ColumnDefinition Width="146*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="Food_Blog_Lbel" FontWeight="Bold" Content="Food  Blog" HorizontalAlignment="Left" VerticalAlignment="Center" Width="233" FontSize="36" Height="70" Grid.Column="1" Margin="76,-6,0,0"/>
-            <Button x:Name="My_Recipes" Click="ExecuteMyRecipes" Content=""  HorizontalAlignment="Left" Width="234" RenderTransformOrigin="-0.094,0.17"  BorderBrush="#FFF5F0F0" Margin="62,-66,0,-39" Grid.Column="2">
+            <Label x:Name="Food_Blog_Lbel" FontWeight="Bold" Content="Food  Blog" HorizontalAlignment="Left" VerticalAlignment="Top" Width="233" FontSize="36" Height="70" Grid.Column="1" Margin="76,-1,0,0"/>
+            <Button x:Name="My_Recipes" Click="ExecuteMyRecipes" Content="" Width="112" RenderTransformOrigin="-0.094,0.17"  BorderBrush="#FFF5F0F0" Margin="158,-33,0,0" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="118">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -43,7 +43,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
                 <Button.Background>
-                    <ImageBrush ImageSource="C:\Users\USER\source\repos\Recipe-Book\MyRecipeBook\Image\recipe-book (3).png" Stretch="None"/>
+                    <ImageBrush ImageSource="/recipe-book 5.png" Stretch="UniformToFill" TileMode="None"/>
                 </Button.Background>
             </Button>
 
@@ -59,12 +59,31 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" x:Name="Serch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search: "  FontWeight="Bold" VerticalAlignment="Top" Height="30" Width="133" FontSize="16" Margin="2,34,0,0" RenderTransformOrigin="0.564,-0.114" />
             <TextBox Grid.Column="0" VerticalAlignment="Top" x:Name="tbFilter" Background="WhiteSmoke" MaxHeight="32" Text="" TextChanged="TextBox_TextChanged" Margin="59,33,11,0" Height="32"/>
-            <Label  x:Name="My_recipes_lbel" Content="My Recipes" Margin="0,80,-497,0" Grid.Column="5" VerticalAlignment="Top" Height="35" Width="104" FontSize="16" HorizontalAlignment="Right"/>
-            <Button x:Name="Recipe_for_beginer" Content="Recipes for beginer"  FontWeight="Bold" VerticalAlignment="Top"  HorizontalAlignment="Left" Margin="6,29,0,0"  Width="248" Height="35" Background="#FFF9F6F6" BorderBrush="#FFFDF9F9" FontSize="16" Grid.Column="2" Command="{Binding RecipesForBeginnersCommand}"/>
-            <Button Content="Recomanded Recipes" FontWeight="Bold"  VerticalAlignment="Top" Margin="10,27,7,0" Height="38" Background="#FFFBF8F8" BorderBrush="#FFFDFBFB" FontSize="16" Grid.Column="3" Command="{Binding RecommendedRecipesCommand}"/>
-            <Button x:Name="Home" Grid.Column="1" Content="Home" FontWeight="bold" Margin="10,27,10,0" VerticalAlignment="Top" Height="38" Background="#FFF9F5F5" BorderBrush="#FFFFFCFC" FontSize="16" Command="{Binding HomeCommand}"/>
-            <Button Grid.Column="5" Content="Abou us" FontWeight="bold" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" Height="38" Width="196" FontSize="16" Background="#FFF7F4F4" BorderBrush="#FFEDE9E9" Command="{Binding AboutUsCommand}"/>
-            <Button Grid.Column="4" Content="Substitutes for components"  FontWeight="bold" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="16" Height="33" Width="216" Background="#FFF3F2F2" BorderBrush="#FFF3F2F2" Command="{Binding SubstitutesCommand}"/>
+            <Button x:Name="Recipe_for_beginer"  Content="Recipes for beginer"  FontWeight="Bold" VerticalAlignment="Top"  HorizontalAlignment="Left" Margin="6,29,0,0"  Width="248" Height="35" Background="White" BorderBrush="#FFC1BFBF" FontSize="16" Grid.Column="2" Command="{Binding RecipesForBeginnersCommand}"  Style="{StaticResource MaterialDesignRaisedButton}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="Black"/>
+                </Button.Foreground>
+            </Button>
+            <Button Content="Recomanded Recipes" FontWeight="Bold"  VerticalAlignment="Top" Margin="10,27,7,0" Height="38" Background="White" BorderBrush="#FFC1BFBF" FontSize="16" Grid.Column="3" Command="{Binding RecommendedRecipesCommand}" Style="{StaticResource MaterialDesignRaisedButton}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="Black"/>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="Home" Grid.Column="1" Content="Home" FontWeight="bold" Margin="10,27,10,0" VerticalAlignment="Top" Height="38" Background="White" BorderBrush="#FFC1BFBF" FontSize="16" Command="{Binding HomeCommand}" Style="{StaticResource MaterialDesignRaisedButton}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="Black"/>
+                </Button.Foreground>
+            </Button>
+            <Button Grid.Column="5" Content="Abou us" FontWeight="bold" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" Height="38" Width="196" FontSize="16" Background="White" BorderBrush="#FFC1BFBF" Command="{Binding AboutUsCommand}" Style="{StaticResource MaterialDesignRaisedButton}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="Black"/>
+                </Button.Foreground>
+            </Button>
+            <Button Grid.Column="4" Content="Substitutes for components"  FontWeight="bold" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="16" Height="33" Width="216" Background="White" BorderBrush="#FFC1BFBF" Command="{Binding SubstitutesCommand}" Style="{StaticResource MaterialDesignRaisedButton}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="Black"/>
+                </Button.Foreground>
+            </Button>
         </Grid>
         <Grid Grid.Row="2"  Margin="0,3,0,0">
             <Grid.ColumnDefinitions>
@@ -75,7 +94,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="553*"/>
                     <RowDefinition Height="72*"/>
-                </Grid.RowDefinitions>
+                </Grid.RowDefinitions> 
                 <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="0,-3,0,0">
                     <ListView x:Name="listView" SelectedIndex="1" Background="WhiteSmoke" ItemsSource="{Binding Recipes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
                         <ListView.ItemTemplate>
@@ -85,7 +104,11 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </Border>
-                <Button x:Name="add_to_my_recipes" Content="Add To My Recipe Book"  Grid.Column="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="72" Width="354" Click="add_to_my_recipes_Click"/>
+                <Button x:Name="add_to_my_recipes" Content="Add To My Recipe Book"   Grid.Column="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="72" Width="354" Click="add_to_my_recipes_Click" Background="#FFFFC0C0" BorderBrush="#FFFFC0C0" Style="{StaticResource MaterialDesignRaisedButton}">
+                    <Button.Foreground>
+                        <SolidColorBrush Color="Black"/>
+                    </Button.Foreground>
+                </Button>
             </Grid>
             <Grid Grid.Column="1"  DataContext="{Binding SelectedRecipe, UpdateSourceTrigger=PropertyChanged}">
                 <Grid.RowDefinitions>
@@ -104,7 +127,11 @@
                     <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Text="{Binding Title}"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Border BorderBrush="Black" BorderThickness="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <Border.Background>
+                            <ImageBrush/>
+                        </Border.Background>
+                    </Border>
                     <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Document="{Binding Doc, Converter={StaticResource strToFlowDocConverter}, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
 

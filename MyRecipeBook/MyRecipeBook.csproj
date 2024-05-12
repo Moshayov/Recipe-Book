@@ -24,7 +24,15 @@
     <None Remove="Image\recipe-book.png" />
     <None Remove="Image\תמונה1.png" />
     <None Remove="Image\תמונה6.png" />
+    <None Remove="recipe-book %283%29.png" />
+    <None Remove="recipe-book %283%294.png" />
+    <None Remove="recipe-book 5.png" />
+    <None Remove="recipe-book.png" />
+    <None Remove="recipe-book4.png" />
     <None Remove="View_Windows\1085428.png" />
+    <None Remove="View_Windows\arrow-right-drop-circle-outline-custom.png" />
+    <None Remove="View_Windows\arrow-up-drop-circle-custom %281%29.png" />
+    <None Remove="View_Windows\arrow-up-drop-circle-custom.png" />
     <None Remove="View_Windows\chef2_116502.png" />
     <None Remove="View_Windows\depositphotos_114588226-stock-illustration-chef-cartoon-icon-cooking-and.jpg" />
     <None Remove="View_Windows\images.jpeg" />
@@ -33,6 +41,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -68,7 +77,15 @@
     <Resource Include="Image\recipe-book.png" />
     <Resource Include="Image\תמונה1.png" />
     <Resource Include="Image\תמונה6.png" />
+    <Resource Include="recipe-book (3).png" />
+    <Resource Include="recipe-book (3)4.png" />
+    <Resource Include="recipe-book 5.png" />
+    <Resource Include="recipe-book.png" />
+    <Resource Include="recipe-book4.png" />
     <Resource Include="View_Windows\1085428.png" />
+    <Resource Include="View_Windows\arrow-right-drop-circle-outline-custom.png" />
+    <Resource Include="View_Windows\arrow-up-drop-circle-custom (1).png" />
+    <Resource Include="View_Windows\arrow-up-drop-circle-custom.png" />
     <Resource Include="View_Windows\chef2_116502.png" />
     <Resource Include="View_Windows\depositphotos_114588226-stock-illustration-chef-cartoon-icon-cooking-and.jpg" />
     <Resource Include="View_Windows\images.jpeg" />

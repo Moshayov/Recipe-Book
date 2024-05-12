@@ -55,7 +55,7 @@ namespace MyRecipeBook
 
             Recipe2 recipe = new Recipe2();
             recipe.Difficulty = recipeJson.difficulty;
-            recipe.Comments = new List<recipe2.Comment>();
+            recipe.Comments = string.Empty; ;
             recipe.Time = recipeJson.time;
             recipe.Image = recipeJson.image;
             recipe.Title = recipeJson.title;
@@ -70,15 +70,7 @@ namespace MyRecipeBook
             // Generate and add random ratings to the recipe until the minimum count is reached
             Random rand = new Random();
             int count = 0;
-            int randomRating = rand.Next(1, 10); // Generates a random rating between 1 and 5
-            for (int i = 0; i < randomRating; i++)
-            {
-                int randomRating2 = rand.Next(3, 5);
-                recipe.Ratings.Add(new Rating { Recipe = recipe, RatingId = count, Stars = randomRating2, RecipeId = recipe.Id });
-                count++;
-            }
-            //recipe.Stars = rand.Next(3, 5);
-
+            
             List<Dictionary<string, string>> methodList = recipeJson.method;
 
             recipe.Instructions = methodList
@@ -92,9 +84,8 @@ namespace MyRecipeBook
             {
                 recipe.ImageFile = webClient.DownloadData(recipe.Image);
             }
-            recipe.Comments = new List<Comment>();
-            recipe.Ratings = new List<Rating>();
-            recipe.UsageDates = new List<UsageDate>();
+            recipe.Rating =0;
+            recipe.UsageDates = string.Empty;
             // Create a Random object.
             Random random = new Random();
             // Get the number of enum values.
@@ -164,20 +155,11 @@ namespace MyRecipeBook
                 {
                     dbContext.Entry(recipeToUpdate).State = EntityState.Modified; // Set entity state to Modified
 
-                    // Generate and add random ratings to the recipe until the minimum count is reached
-                    Random rand = new Random();
-                    int randomRating = rand.Next(1, 3); // Generates a random rating between 1 and 5
-                    for (int i = 0; i < randomRating; i++)
-                    {
-                        int randomRating2 = rand.Next(3, 5);
-                        recipeToUpdate.Ratings.Add(new Rating { Recipe = recipeToUpdate, RatingId = count, Stars = randomRating2, RecipeId = recipeToUpdate.Id });
-                        count++;
-                    }
-                   // recipeToUpdate.Stars = rand.Next(3, 5);
-
+                 //   recipeToUpdate.imageFromRecipes.Add(new Images { RecipeId = recipeToUpdate.Id, ImageFile = recipeToUpdate.ImageFile, Recipe = recipeToUpdate });
+              
                     // Create a FlowDocument for the record
                     FlowDocument doc = InitializeDoc(recipeToUpdate);
-
+                    FlowDocument doc1 = InitializeDoc_rting_commentes(recipeToUpdate);
                     // Serialize FlowDocument to binary data
                     using (MemoryStream stream = new MemoryStream())
                     {
@@ -188,7 +170,12 @@ namespace MyRecipeBook
                         // Update the DocumentData column for this record
                         recipeToUpdate.DocumentData = documentData;
                         recipeToUpdate.Doc = XamlWriter.Save(doc);
+                        TextRange range1 = new TextRange(doc1.ContentStart, doc1.ContentEnd);
+                        range.Save(stream, DataFormats.XamlPackage);
+                        recipeToUpdate.DocumentComment_rting = stream.ToArray();
+                        recipeToUpdate.Doc_Comments = XamlWriter.Save(doc1);
                     }
+                    
                     try
                     {
                         dbContext.SaveChanges(); // Save changes to the database
@@ -199,12 +186,12 @@ namespace MyRecipeBook
                         // You might want to consider refreshing the record from the database and reapplying the changes
                         // or taking another suitable action based on your application's requirements.
                     }
+
                 }
              
             }
 
         }
-
 
         public List<recipe2> GetRecipes()
         {
@@ -224,24 +211,13 @@ namespace MyRecipeBook
             recipe1.Difficulty = recipe.Difficulty;
             recipe1.Description = recipe.Description;
             recipe1.DocumentData = recipe.DocumentData;
-            recipe1.UsageDates = new List<UsageDate>();
+            recipe1.Indexs = recipe.Indexs;
             recipe1.Id = recipe.Id;
             //recipe1.Stars = recipe.Stars;
-            foreach(UsageDate u in recipe.UsageDates)
-            {
-                recipe1.UsageDates.Add(u);
-            }
-            //recipe1.UsageDates = recipe.UsageDates;//העתקה רדודה
-            recipe1.Ratings = new List<Rating>();
-            foreach (Rating r in recipe.Ratings)
-            {
-                recipe1.Ratings.Add(r);
-            }
+            recipe1.DocumentComment_rting = recipe.DocumentComment_rting;
+            recipe1.UsageDates = recipe.UsageDates;
+            recipe1.Rating = recipe.Rating;
             recipe1.Comments = recipe.Comments;//
-            foreach(Comment c in recipe.Comments)
-            {
-                recipe1.Comments.Add(c);
-            }
             recipe1.Image = recipe.Image;
             recipe1.Country = recipe.Country;
             recipe1.Title = recipe.Title;
@@ -249,7 +225,13 @@ namespace MyRecipeBook
             recipe1.Time = recipe.Time;
             recipe1.Ingredients = recipe.Ingredients;
             recipe1.Instructions =new List<MethodItem>();//
-            foreach(MethodItem m in recipe.Instructions)
+            recipe1.imageFromRecipes=new List<Images>();//
+            recipe1.Doc_Comments = recipe.Doc_Comments;
+            foreach (Images ime in recipe.imageFromRecipes)
+            {
+                recipe1.imageFromRecipes.Add(ime);
+            }
+            foreach (MethodItem m in recipe.Instructions)
             {
                 recipe1.Instructions.Add(m);
             }
@@ -262,17 +244,22 @@ namespace MyRecipeBook
         {
             FlowDocument doc = new FlowDocument();
 
-          // Calculate the average rating from the Ratings list
-            double averageRating = r.Ratings.Count > 0 ? r.Ratings.Average(rating => rating.Stars) : 0;
+            // Calculate the average rating from the Ratings list
+            //double averageRating = r.Ratings.Count > 0 ? r.Ratings.Average(rating => rating.Stars) : 0;
 
             // Get the star rating as a Span with yellow stars
-            Span starRatingSpan = GetStarRatingString(averageRating);
-            // Create a Paragraph to hold the star rating Span
-            Paragraph starRatingParagraph = new Paragraph();
-            starRatingParagraph.Inlines.Add(new Bold(new Run($"Rating:")));
-            starRatingParagraph.Inlines.Add(starRatingSpan);
-            // Add the star rating Paragraph to the FlowDocument
-            doc.Blocks.Add(starRatingParagraph);
+            /*
+            if (r.Rating > 0)
+            {
+                Span starRatingSpan = GetStarRatingString(r.Rating);
+                // Create a Paragraph to hold the star rating Span
+                Paragraph starRatingParagraph = new Paragraph();
+                starRatingParagraph.Inlines.Add(new Bold(new Run($"Rating:")));
+                starRatingParagraph.Inlines.Add(starRatingSpan);
+                // Add the star rating Paragraph to the FlowDocument
+                doc.Blocks.Add(starRatingParagraph);
+            }
+             */
             // Add Title
             //doc.Blocks.Add(new Paragraph(new Bold(new Run("Title: " + r.Title))));
             doc.Blocks.Add(new Paragraph(new Bold(new Run($"Description: {r.Description}"))));
@@ -334,6 +321,34 @@ namespace MyRecipeBook
             }
 
             return starSpan;
+        }
+
+        public FlowDocument InitializeDoc_rting_commentes(recipe2 r)
+        {
+            FlowDocument doc = new FlowDocument();          
+            doc.Blocks.Add(new Paragraph(new Bold(new Run($"What do I think of the recipe 🤔?\r {r.Comments}"))));
+            if (r.Rating > 0)
+            {
+                Span starRatingSpan = GetStarRatingString(r.Rating);
+                // Create a Paragraph to hold the star rating Span
+                Paragraph starRatingParagraph = new Paragraph();
+                starRatingParagraph.Inlines.Add(new Bold(new Run($"Rating:")));
+                starRatingParagraph.Inlines.Add(starRatingSpan);
+                // Add the star rating Paragraph to the FlowDocument
+                doc.Blocks.Add(starRatingParagraph);
+            }
+            if (r.UsageDates!="")
+            {
+                doc.Blocks.Add(new Paragraph(new Bold(new Run($"{r.UsageDates}"))));
+            }
+            // Serialize the FlowDocument to binary data
+            using (MemoryStream stream = new MemoryStream())
+            {
+                TextRange range = new TextRange(doc.ContentStart, doc.ContentEnd);
+                range.Save(stream, DataFormats.XamlPackage);
+                r.DocumentComment_rting = stream.ToArray();
+            }
+            return doc;
         }
     }
 }

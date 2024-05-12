@@ -27,10 +27,10 @@ namespace Recipes
         public int Id { get; set; }
         public string Title { get; set; }
         public string Ingredients { get; set; }
-        public List<Comment> Comments { get; set; } = new List<Comment>();
-        public List<Rating> Ratings { get; set; } = new List<Rating>();
-        public List<UsageDate> UsageDates { get; set; } = new List<UsageDate>();
-        public List<Images> imageFromRecipes { get; set; }=new List<Images>();
+        public string Comments { get; set; }
+        public int Rating { get; set; }
+        public string UsageDates { get; set; }
+        public List<Images> imageFromRecipes { get; set; }
         public string Difficulty { get; set; }
         public string Portion { get; set; }
         public string Time { get; set; }
@@ -41,16 +41,19 @@ namespace Recipes
         public byte[] ImageFile { get; set; }
         public string Country { get; set; }
         public byte[] DocumentData { get; set; }//בי
-      
+        public byte[] DocumentComment_rting { get; set; }
+        public string Doc_Comments { get; set; }
+        public int Indexs { get; set; }
 
         public recipe2() 
         {
+            Doc_Comments = string.Empty;
             Is_Mine = false;
             Title = string.Empty;
             Ingredients = string.Empty;
-            Comments = new List<Comment>();
-            Ratings = new List<Rating>();
-            UsageDates = new List<UsageDate>();
+            Comments = string.Empty;
+            Rating =0;
+            UsageDates = string.Empty;
             Difficulty = "easy";
             Portion = string.Empty;
             Time = string.Empty;
@@ -61,6 +64,9 @@ namespace Recipes
             ImageFile = new byte[0];
             Country = string.Empty;
             DocumentData = new byte[0];
+            imageFromRecipes = new List<Images>();
+            DocumentComment_rting = new byte[0];
+            Indexs = 0;
         }
 
         public class Images
@@ -77,31 +83,7 @@ namespace Recipes
             public string StepNumber { get; set; } // Step number, e.g., 1, 2, 3
             public string Instruction { get; set; } // The actual instruction text
         }
-       
-
-        public class Comment
-        {
-            public int CommentId { get; set; }
-            public string Text { get; set; }
-            public int RecipeId { get; set; }
-            public recipe2 Recipe { get; set; }
-        }
-
-        public class Rating
-        {
-            public int RatingId { get; set; }
-            public int Stars { get; set; }
-            public int RecipeId { get; set; }
-            public recipe2 Recipe { get; set; }
-        }
-
-        public class UsageDate
-        {
-            public int UsageDateId { get; set; }
-            public DateTime Date { get; set; }
-            public int RecipeId { get; set; }
-            public recipe2 Recipe { get; set; }
-        }
+    
 
     }
   

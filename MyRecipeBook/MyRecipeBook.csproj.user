@@ -10,9 +10,6 @@
     <Compile Update="View_Windows\AboutUsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View_Windows\AddEdit.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View_Windows\EditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,9 +25,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View_Windows\AboutUsWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View_Windows\AddEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View_Windows\EditWindow.xaml">

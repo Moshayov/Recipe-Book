@@ -231,3 +231,9 @@ C:\Users\sara\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\GetWayServe
 C:\Users\sara\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\GetWayServer.dll
 C:\Users\sara\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\refint\GetWayServer.dll
 C:\Users\sara\source\repos\Recipe-Book\GetWayServer\obj\Debug\net6.0\GetWayServer.pdb
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\BL.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\DAL.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\DP.dll
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\BL.pdb
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\DP.pdb
+C:\Users\USER\source\repos\Recipe-Book\GetWayServer\bin\Debug\net6.0\DAL.pdb
