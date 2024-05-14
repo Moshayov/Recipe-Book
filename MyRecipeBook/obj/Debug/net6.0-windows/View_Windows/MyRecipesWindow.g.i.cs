@@ -121,7 +121,7 @@ namespace MyRecipeBook {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MyRecipeBook;component/view_windows/myrecipeswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MyRecipeBook;V1.0.0.0;component/view_windows/myrecipeswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View_Windows\MyRecipesWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
